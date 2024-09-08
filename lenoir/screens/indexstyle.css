@@ -3,10 +3,13 @@ body{
     border:0;
     margin: 0;
     padding: 0;
-    font-family: 'Inknut Antiqua', serif;
+    font-family: 'Lato', sans-serif;
     display: grid;
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
+}
+p{
+    color: white;
 }
 .head{
     display: flex;
@@ -15,76 +18,109 @@ body{
     margin: 0;
     border:0;
     flex-direction: column;
+    
 
 }
-.arriba{
+.upper-header{
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    border-bottom: 5px solid black;
-    align-content: center;
+    height: 27px;
+    font-size: 13px;
+    color: white;
+    background-color: #282828;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+
 }
 
-p{
-    color: #fff;
+.nav{
+    display: flex;
+    height: 90px;
+
 }
 
 #lenoirhead{
-    display: flex;
     background-image: url("img/lenoirhead.svg");
     background-size: cover;
     background-repeat: no-repeat;
-    width: 13%;
-    height: 60px;
-     
-}
-#vino{
-    background-image: url("img/vino.svg");
-    background-repeat: no-repeat;
-    background-size: cover;  
-    width: 40px; 
+    width: 17%;
     height: 100%;
+}
+
+
+
+
+
+.categories{
     display: flex;
+    width: 30%;
+    height: 100%;   
+    padding: 0px 10px 0px 20px; 
     align-items: center;
 }
+.despegable{
+    display: flex;
+}
+.arrow{
+    background-image: url("img/lenoirhead.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
 #busqueda{
+    display: flex;
+    width: 20%;
+    padding: 0  10px; 
+    height: 100%;
+    align-items: center;
+}
+#search{
     background-image: url("img/busqueda.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 40px; 
+    width: 35%;
     height: 100%;
-    display: flex;
-    align-items: center;
+    align-items: right;
 }
-.cuentaycarrito{
+
+
+
+
+.account{
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    width: 30%;
+    height: 100%;
 }
 #cuenta{
     background-image: url("img/cuenta.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 40px; 
+    width: 20%;
     height: 100%;
-    display: flex;
+    display: flex; 
     align-items: center;
 }
+
 #carrito{
     background-image: url("img/carrito.svg");
     background-repeat: no-repeat;
-    background-size: contain;
-    width: 40px; 
+    background-size: cover;
+    width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-.abajo{
-    display: flex;
-    border-bottom: 5px solid black;
-    flex-wrap: wrap;
 
-}
+
+
 
 .cuerpo{
     display: flex;
@@ -115,39 +151,70 @@ p{
 }
 
 footer{
-    background-color: darkred;
+    background-color: #282828;
     color: #fff;
-    padding: 10px 30px;
+    padding: 0px 30px;
     width: auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .pagos {
     display: flex;
-    background-image: url("img/.svg");
+    background-image: url("/lenoir/screens/img/pago.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 150px;
-    height: 50px;
-}
+    align-items: center;
+    width: 100%;
+    height: 70px;
 
-.pagos p {
-    text-align: left;
-    font-size: 18px;
 }
-
-.LogoFooter{
+.logofooter {
     display: flex;
-    background-image: url("img/logo.svg");
-    background-size: contain;
+    background-image: url("/lenoir/screens/img/logo-footer.svg");
+    background-size: cover;
     background-repeat: no-repeat;
-    width: 70px;
-    height: 300px;
-    align-self: flex-end;
+    width: 80px;
+    height: 120px;
 }
+.pago{
+    flex-direction: column;
+    width: 30%;
+    height: 85%;
+    align-self: center;
+}
+.medios_pago{
 
-.Copyright {
+    width: 40%;
+
+}
+.contacto{
+    width: 10%;
+    height: 85%;
+    align-self: center;
+}
+.ord{
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    margin: 20px 20px;
+}
+.tiktok{
+    background-image: url("/lenoir/screens/img/tiktok.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+.instagram{
+    background-image: url("/lenoir/screens/img/ig.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+.copyright {
     display: flex;
     font-size: 15px;
-    text-align: end;
 }
