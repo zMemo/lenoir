@@ -17,27 +17,31 @@
         <div class="nav">
             
             <div id="lenoirhead"></div>    
-            
-            <div class="categories">
-                <div class="desplegable" id="desplegable1">
-                    <a href=""><h4>Vinos</h4></a>
-                </div>
-                <div class="desplegable" id="desplegable2">
-                    <a href=""><h4>Cerveza</h4></a>
-                </div>
-                <div class="desplegable" id="desplegable3">
-                    <a href=""><h4>Licores</h4></a>
-                </div>
-            </div>
-
-
-            <div id="busqueda">
-                <input type="text">
-                <div id="search"></div>
+            <ul class="categories">
+                <li><a href="#">Vinos</a>
+                    <ul class="submenu">
+                        <li><a href="#">Blancos</a></li>
+                        <li><a href="#">Tintos</a></li>
+                        <li><a href="#">Rosados</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Cervezas</a>
+                    <ul class="submenu">
+                        <li><a href="#">Rubia</a></li>
+                        <li><a href="#">Negra</a></li>
+                        <li><a href="#">Sin alcohol</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Buscar...">
+                <a href="#" id="search-icon"></a>
             </div>
             <div class="account">
-                <div id="cuenta"></div>
-                <div id="carrito"></div>
+                <a id="cuenta" href=""></a>
+                <a id="carrito" href=""></a>
             </div>
         </div>
     </header>
@@ -47,31 +51,62 @@
 
     <div class="cuerpo">
         <div id="carrousel"></div>
-
+        
         <div class="mid" >
             <div class="midcolumn">
-                <img class="midlogo" src="" alt="">
-                <p></p>
+                <div class="midcircle" id="moto"></div>
+                
+                <div class="midbox">
+                <h6>ENTREGAS EN EL DIA</h6>
+                <span>Entregamos en el dia de la misma compra</span>
+                </div>
             </div>
             <div class="midcolumn">
-                <img class="midlogo" src="" alt="">
-                <p></p>
+                <div class="midcircle" id="bank"></div>
+                
+                <div class="midbox">
+                    <h6>EFECTIVO/TRANSFERENCIA</h6>
+                </div>
             </div>
             <div class="midcolumn">
-                <img class="midlogo" src="" alt="">
-                <p></p>
+                <div class="midcircle" id="event"></div>
+                
+                <div class="midbox">
+                    <h6>ASISTENCIA EN EVENTOS</h6>
+                    <span>Nos encargamos de cubrir todas las necesidades para que no falte nada en tu fiesta</span>
+                </div>
             </div>
         </div>
         
+
+
+
+        <div class="promotxt">
+            <h2>Promos del finde</h2>
+            <p>Todos los fin de semanas cambiamos los combos</p>
+        </div>
         <div id="promo">
-            <div class="oferta" id="offer1">
+            <div class="offer" id="offer1">
+                <div class="offer1"></div>
+                <h5>Combo non</h5>
+                <span></span>
+                <a href="">Agregar al carrito</a>
             </div>
-            <div class="oferta" id="offer2">
+            <div class="offer" id="offer2">
+                <div class="offer2"></div>
+                <h5>Combo non</h5>
+                <span></span>
+                <a href="">Agregar al carrito</a>
             </div>
-            <div class="oferta" id="offer3">
+            <div class="offer" id="offer3">
+                <div class="offer3"></div>
+                <h5>Combo non</h5>
+                <span></span>
+                <a href="">Agregar al carrito</a>
             </div>
         </div>
     </div>
+</div>
 
 
 
@@ -79,20 +114,16 @@
     <footer>
         <div class="pago">
             <div class="medios_pago">
-                <h5>Medios de pago:</h5>
+                <h3>Medios de pago:</h3>
             </div>
             <div class="pagos"></div>
             <p class="Copyright">Copyright Lenoir bebidas - 2024. Todos los derechos reservados.</p>     
         </div>
         <div class="contacto">
-            <h5>Contacto:</h5>
-            <div class="ord">
-                <a href="https://www.tiktok.com/@lenoir.bebidas">
-                    <div class="tiktok"></div>
-                </a>
-                <a class="instagram" href="https://www.instagram.com/lenoir.bebidas/">
-                    <div class="instagram"></div>
-                </a>
+            <h3>Contacto:</h3>
+            <div class="social-media">
+                <a href="https://www.tiktok.com/@lenoir.bebidas" class="social-icon"></a>
+                <a href="https://www.instagram.com/lenoir.bebidas/" class="social-icon"></a>
             </div>
         </div>  
         <div class="logofooter">
