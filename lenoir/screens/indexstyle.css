@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Supermercado+One&display=swap');
 
+@media(min-width:991px){
+}
+
 body{
     border:0;
     margin: 0;
@@ -138,8 +141,6 @@ header ul li a:hover{
     
     padding-right: 40px;
 }
-
-
 .account a{
     width: 40px; 
     height: 40px;
@@ -147,16 +148,14 @@ header ul li a:hover{
     background-position: center;
     background-repeat: no-repeat;
 }
-
 #cuenta {
     background-image: url("img/cuenta.svg");
 }
-
 #carrito {
     background-image: url("img/carrito.svg");
 }
-.search{
-    background-image: url("searc");
+#search{
+    background-image: url("img/search.svg");
 }
 .cuerpo{
     display: flex;
@@ -179,7 +178,7 @@ header ul li a:hover{
 /* comienza la parte media, son cualidades de lenoir */
 .mid{
     display: flex;
-    background-color: #afb2b7;
+    background-color:   #afb2b7;
     height: 220px;
     width: 100%;
     flex-direction: row;
@@ -234,7 +233,7 @@ span{
 
 
 
-
+/*  empieza parte combos de lenoir */
 .promotxt{
     background-color: #f3f3f3;
     height: 180px;
@@ -273,7 +272,7 @@ span{
     border: none;
     outline: none;
     position: relative;
-    background-color: wheat;
+    background-color: #CB5151 ;
     text-transform: uppercase;
 }
 .btnagregar:hover{
@@ -289,8 +288,7 @@ span{
     height: 85%;
     width: 100%;
     border-radius: 50%
-    
-    
+
 }
 .offer2{
     background-image: url("img/non.jpg");
@@ -310,6 +308,9 @@ span{
     width: 100%;
     border-radius: 50%
 }
+/*  termina parte combos de lenoir */
+
+
 
 
 
@@ -352,6 +353,7 @@ footer{
     text-transform: uppercase;
     width: 40%;
     font-size: 12px;
+    padding-bottom: 10px;
 }
 .contacto{
     font-size: 12px;
@@ -359,6 +361,7 @@ footer{
     height: 85%;
     align-self: center;
     text-transform: uppercase;
+    text-align: center;
 }
 .social-icon {
     height: 50px;
@@ -375,7 +378,6 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 .social-icon:hover{
     background-color: #ff8a00;
@@ -384,15 +386,12 @@ footer{
     background-image: url("/lenoir/screens/img/ig.svg");
 }
 h3, p{
-    color: white;
+    color: white;   
 }
-
 .copyright {
+    margin-top: 30px;
     display: inline-block;
-    vertical-align: middle;
     color: #5e5e5e;
-    font-size: 15px;
-    text-transform: lowercase;
     font-size: 12px;
     letter-spacing: 1px;
 }

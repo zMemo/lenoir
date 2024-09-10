@@ -149,46 +149,57 @@ header ul li a:hover{
     background-image: url("img/search.svg");
 }
 
-
-main {
-    padding: 0;
-    margin: 0;
-    border: 0;
+.Adminlogin {
+    padding: 20px;
     text-align: center;
-}
-
-.catalog {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.product {
-    margin-bottom: 20px;
-}
-
-.product img {
-    width: 200px;
-    display: block;
+    width: 100%; 
+    max-width: 600px; 
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     margin: 0 auto;
 }
 
-.product p {
+input[type="text"], input[type="email"] {
+    width: 100%; 
+    padding: 15px;
     margin: 10px 0;
-    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
-.product button {
-    margin: 0px;
-    padding: 10px 15px;
-    background-color: black;
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #FF0000;
     color: white;
+    padding: 10px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.product button:hover {
-    background-color: grey;
+input[type="submit"]:hover {
+    background-color: #CC0000;
+}
+
+img {
+    max-width: 150px;
+    margin-bottom: 20px;
 }
 
 footer {
