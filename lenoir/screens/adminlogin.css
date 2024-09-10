@@ -1,50 +1,68 @@
-body {
-    background-color: #8B0000;
+@media(max-width:991px){
+
+    body{
+        padding:30px;
+    }
+
+    form{
+        width:100%;
+    }
+}
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.Adminlogin {
-    padding: 0px; 
-    text-align: center;
-    width: 300px; 
-}
-
-
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     box-sizing: border-box;
 }
+body {  
+    background-color: #7D2221;
+    font-family: "Inknut Antiqua";
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+form {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    width:400px;
+    margin: auto;
+}
+.logo{
+    background-image: url("img/logo-footer.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    margin: auto;
+    }
 
-
-input[type="submit"] {
-    background-color: #FF0000; 
-    color: white;
-    padding: 10px; 
+input{
+    padding:17px 11px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    background-color: #FAFAFF;
+    outline:none;
+    font-size:17px;
+}
+::placeholder { color: #6B0404; }
+input:hover{
+    background-color: #FAFAFF;
+    color: black;
+}
+.btn{
+    background-color: black;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-transform: uppercase;
     cursor: pointer;
-    font-size: 16px;
-    width: 100%; 
-    box-sizing: border-box; 
 }
-
-
-input[type="submit"]:hover {
-    background-color: #CC0000; 
-}
-
-
-img {
-    max-width: 150px;
-    margin-bottom: 20px;
+.btn:hover{
+    background-color: white;
+    color: black;
 }

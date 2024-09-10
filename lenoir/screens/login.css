@@ -1,14 +1,25 @@
-* {
+@media(max-width:991px){
 
+    body{
+        padding:30px;
+    }
+
+    form{
+        width:100%;
+    }
+
+    .remember{
+        flex-direction: column;
+    }
+}
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
-
 body {
     background-color: black;
-    font-family: ink, Helvetica, sans-serif;
+    font-family: "Inknut Antiqua";
     align-items:center;
     justify-content:center;
     height:100vh;
@@ -17,8 +28,6 @@ body {
     background-size: cover;
     text-align: center;
 }
-
-
 form {
     padding: 50px;
     display: flex;
@@ -26,7 +35,6 @@ form {
     width:400px;
     margin: auto;
 }
-
 .logo{
     background-image: url("img/logo-footer.svg");
     background-repeat: no-repeat;
@@ -36,45 +44,43 @@ form {
     height: 300px;
     margin: auto;
     }
-
-label, p{
-    font-size: 17px;
-    color: #575757;
-    margin-bottom: 10px;
-}
-
 input{
     padding:17px 11px;
-    border: 1px solid #7D2221;
+    border: 0px;
     border-radius: 25px;
     margin-bottom: 25px;
     background-color: #FAFAFF;
     outline:none;
-    color: #7D2221;
+    color: black;
     font-size:17px;
 }
+::placeholder { color: #7D2221; }
 
-.btn-1{
-    background-color: #A30505;
+.btn{
+    margin-top: 10px;
+    border: 0px;
+    background-color: #7D2221;
     font-size: 15px;
     color: #FFFFFF;
     text-transform: uppercase;
     cursor: pointer;
-
 }
-
-.btn-1:hover{
-    background-color: #A30505;
+.btn:hover{
+    background-color: white;
+    color: black;
 }
-
 .register{
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
 }
-a {
+a{ 
+    margin-top: 10px;
     text-decoration: none;
     color: #FAFfFF;
+}
+a:hover{
+    color: darkgrey;
 }
 @media(max-width:991px){
 
