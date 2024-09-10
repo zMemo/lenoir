@@ -1,3 +1,4 @@
+
 body{
     border:0;
     margin: 0;
@@ -13,6 +14,10 @@ body{
     box-sizing: border-box;
     outline: none;
 }
+a{
+    text-decoration: none;
+}
+/*   LO DEL ARRIBA DE HEADER */
 .upper-header{
     display: flex;
     justify-content: center;
@@ -148,114 +153,81 @@ header ul li a:hover{
 #search{
     background-image: url("img/search.svg");
 }
+.logo{
+    display: flex;
+}
 
-
-.product-container {
-    
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
-.product-image {
-   
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
-.product-image img {
-    
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
     width: 100%;
-    height: auto;
-    border-radius: 15px;
+    height: 200px;
+    object-fit: cover;
 }
+
 .product-info {
-    
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 15px;
-    position: relative;
+    padding: 15px;
+    text-align: center;
 }
-.product-name {
-    display: flex;
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #2c3e50;
-    margin-top: -20px; 
+
+.product-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
-.pagos-medio {
-    background-image: url("img/11111.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 15%;
-    height: 100%;
-    
-}
-.payment{
-    display: flex;
-}
+
 .product-price {
-    display: flex;
-    color: #c40835;
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #e63946;
+    margin-bottom: 10px;
 }
-.add-to-cart-btn {
-    background-color: black;
-    color: #fff;
-    padding: 15px 25px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-.add-to-cart-btn:hover {
-    background-color: grey;
-}
-.product-description {
-    display: flex;
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 12px;
-    font-size: 18px;
-    line-height: 1.8;
-}
-.info-box {
-    
-    padding: 10px;
-    border-radius: 8px;
+
+.product-desc {
+    font-size: 0.9em;
+    color: #666;
     margin-bottom: 15px;
-    font-size: 16px;
 }
-footer {
+
+.btn-buy {
+    background-color: #1d3557;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-buy:hover {
+    background-color: #457b9d;
+}
+footer{
     background-color: black;
     padding: 0px 30px;
-    width: 100%; 
+    width: auto;
     height: 180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    bottom: 0; 
-    left: 0;
 }
-
 .pagos {
     display: flex;
     background-image: url("/lenoir/screens/img/pago.svg");
@@ -264,8 +236,8 @@ footer {
     align-items: center;
     width: 100%;
     height: 70px;
-}
 
+}
 .logofooter {
     display: flex;
     background-image: url("/lenoir/screens/img/logo-footer.svg");
@@ -275,31 +247,27 @@ footer {
     width: 80px;
     height: 120px;
 }
-
 .pago{
-    
     flex-direction: column;
     width: 30%;
     height: 85%;
     align-self: center;
-   
+    
 }
-
-.medios_pago {
+.medios_pago{
     text-transform: uppercase;
     width: 40%;
     font-size: 12px;
-
+    padding-bottom: 10px;
 }
-
-.contacto {
+.contacto{
     font-size: 12px;
     width: 10%;
     height: 85%;
     align-self: center;
     text-transform: uppercase;
+    text-align: center;
 }
-
 .social-icon {
     height: 50px;
     width: 50px;
@@ -311,31 +279,26 @@ footer {
     background-size: 70%;
     margin: 1rem;
 }
-
 .social-media, .social-footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
-
 .social-icon:hover{
     background-color: #ff8a00;
 }
-
 .social-icon:nth-of-type(2){
     background-image: url("/lenoir/screens/img/ig.svg");
 }
-
 h3, p{
-    color: white;
+    color: white;   
 }
-
 .copyright {
+    margin-top: 30px;
     display: inline-block;
-    vertical-align: middle;
     color: #5e5e5e;
     font-size: 12px;
-    text-transform: lowercase;
     letter-spacing: 1px;
 }
+
+

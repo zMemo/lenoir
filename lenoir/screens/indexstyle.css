@@ -272,16 +272,16 @@ span{
     border: none;
     outline: none;
     position: relative;
-    background-color: #CB5151 ;
+    background-color: black ;
     text-transform: uppercase;
+    color: white;
 }
 .btnagregar:hover{
-    background-color: black;
-    color: white;
+    background-color: grey;
 }
 
 .offer1{
-    background-image: url("img/non.jpg");
+    background-image: url("img/gancia.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -291,7 +291,7 @@ span{
 
 }
 .offer2{
-    background-image: url("img/non.jpg");
+    background-image: url("img/jaggermeister.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -300,7 +300,7 @@ span{
     border-radius: 50%
 }
 .offer3{
-    background-image: url("img/non.jpg");
+    background-image: url("img/fernet.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
