@@ -2,8 +2,174 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    border: 0;
     background-color: #f4f4f4;
     font-family: 'Lato', sans-serif;
+}
+.upper-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 27px;
+    font-size: 13px;
+    color: white;
+    background-color: #282828;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+
+.head{
+    display: flex;
+    background-color: #e9e9e9;
+    color: #000000;
+    margin: 0;
+    border:0;
+    flex-direction: column;
+}
+header ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 30px;
+    
+    }
+    header ul li:last-child{
+    margin-right: 0;
+    }
+    header ul li a{
+    text-decoration: none;
+    color: #42424a;
+    padding: 22px 0;
+    display: inline-block;
+    transition: all ease 0.3s;
+    font-size: 18px;
+    }
+    header ul li a:hover{
+    color: #ff8a00;
+    }
+    
+
+    header ul .submenu{
+    position: absolute;
+    width: auto;
+    min-width: 120px; 
+    background-color: #ffffff;
+    box-shadow: 0 20px 45px #00000020;
+    margin-top: -50px;
+    opacity: 0;
+    z-index: -999;
+    transition: all ease 0.5s;
+    white-space: nowrap;
+    }
+    header ul li:hover .submenu{
+    z-index: 99;
+    opacity: 1;
+    margin-top: 0;
+    }
+    header ul .submenu li{
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
+    } 
+    header ul .submenu li a{
+    padding: 10px 15px;
+    display: inline-block;
+    width: 100%;
+    text-align: center; 
+    white-space: nowrap; 
+    }
+    
+    .hero_sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+
+.nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    height: 100px; 
+    position: relative; 
+    padding: 0 20px; 
+}
+
+#lenoirhead {
+    background-image: url("img/lenoirhead.svg");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 250px; 
+    height: 100%; 
+}
+
+.categories {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1; 
+    padding-left: 20px;
+}
+.account {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    right: 20px; 
+    top: 50%; 
+    
+    padding-right: 40px;
+}
+.search-container {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+#search-bar {
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    border-radius: 5px; 
+    outline: none; 
+    font-size: 16px; 
+    width: 200px; 
+    transition: border-color 0.3s ease; 
+}
+
+#search-bar:focus {
+    border-color: #ff8a00; 
+}
+
+#search-icon {
+    width: 40px; 
+    height: 40px;
+    background-image: url("img/busqueda.svg"); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer; 
+}
+
+
+.account a {
+    width: 40px; 
+    height: 40px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#cuenta {
+    background-image: url("img/cuenta.svg");
+}
+
+#carrito {
+    background-image: url("img/carrito.svg");
 }
 .product-container {
     max-width: 800px;
@@ -92,8 +258,7 @@ body {
     font-size: 16px;
 }
 footer{
-    background-color: #282828;
-    color: #fff;
+    background-color: grey;
     padding: 0px 30px;
     width: auto;
     display: flex;
@@ -115,6 +280,7 @@ footer{
     background-image: url("/lenoir/screens/img/logo-footer.svg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     width: 80px;
     height: 120px;
 }
@@ -123,39 +289,50 @@ footer{
     width: 30%;
     height: 85%;
     align-self: center;
+    
 }
 .medios_pago{
-
+    text-transform: uppercase;
     width: 40%;
-
+    font-size: 12px;
 }
 .contacto{
+    font-size: 12px;
     width: 10%;
     height: 85%;
     align-self: center;
+    text-transform: uppercase;
 }
-.ord{
-    display: flex;
-    justify-content: space-between;
-}
-a{
-    margin: 20px 20px;
-}
-.tiktok{
+.social-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 1px solid var(black);
     background-image: url("/lenoir/screens/img/tiktok.svg");
-    background-size: cover;
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
+    background-position: center;
+    background-size: 70%;
+    margin: 1rem;
 }
-.instagram{
-    background-image: url("/lenoir/screens/img/ig.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-}
-.copyright {
+.social-media, .social-footer{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.social-icon:hover{
+    background-color: #ff8a00;
+}
+.social-icon:nth-of-type(2){
+    background-image: url("/lenoir/screens/img/ig.svg");
+}
+
+.copyright {
+    display: inline-block;
+    vertical-align: middle;
+    color: #5e5e5e;
     font-size: 15px;
+    text-transform: lowercase;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
