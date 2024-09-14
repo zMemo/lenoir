@@ -1,10 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
+body{
+    border:0;
     margin: 0;
     padding: 0;
-    border: 0;
-    background-color: #f4f4f4;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
 }
 .upper-header{
     display: flex;
@@ -13,47 +20,49 @@ body {
     width: 100%;
     height: 27px;
     font-size: 13px;
-    color: white;
-    background-color: #282828;
+    color: black;
+    background-color: darkgray;
     margin: 0;
     text-align: center;
     text-transform: uppercase;
 }
+
 .head{
     display: flex;
-    background-color: #e9e9e9;
+    background-color: black;
     color: #000000;
     margin: 0;
     border:0;
     flex-direction: column;
+    border-bottom: 1px solid white;
+
 }
 header ul li{
     display: inline-block;
     list-style: none;
     margin: 0 30px;
-    
-    }
-    header ul li:last-child{
+    border-bottom: 1px solid grey;
+}
+header ul li:last-child{
     margin-right: 0;
-    }
-    header ul li a{
+}
+header ul li a{
     text-decoration: none;
-    color: #42424a;
+    color: rgb(255, 255, 255);
     padding: 22px 0;
     display: inline-block;
     transition: all ease 0.3s;
     font-size: 18px;
-    }
-    header ul li a:hover{
+}
+header ul li a:hover{
     color: #ff8a00;
-    }
-    
+}
 
     header ul .submenu{
     position: absolute;
     width: auto;
     min-width: 120px; 
-    background-color: #ffffff;
+    background-color: #000000;
     box-shadow: 0 20px 45px #00000020;
     margin-top: -50px;
     opacity: 0;
@@ -100,7 +109,7 @@ header ul li{
 }
 
 #lenoirhead {
-    background-image: url("img/lenoirhead.svg");
+    background-image: url("img/logonegro.png");
     background-size: cover; 
     background-repeat: no-repeat;
     width: 250px; 
@@ -123,52 +132,26 @@ header ul li{
     
     padding-right: 40px;
 }
-.search-container {
-    display: flex;
-    align-items: center; 
-    gap: 10px; 
-}
-#search-bar {
-    border: 1px solid #ddd; 
-    padding: 10px; 
-    border-radius: 5px; 
-    outline: none; 
-    font-size: 16px; 
-    width: 200px; 
-    transition: border-color 0.3s ease; 
-}
-
-#search-bar:focus {
-    border-color: #ff8a00; 
-}
-
-#search-icon {
-    width: 40px; 
-    height: 40px;
-    background-image: url("img/busqueda.svg"); 
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer; 
-}
-
-
-.account a {
+.account a{
     width: 40px; 
     height: 40px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
-
 #cuenta {
     background-image: url("img/cuenta.svg");
 }
-
 #carrito {
     background-image: url("img/carrito.svg");
 }
+#search{
+    background-image: url("img/search.svg");
+}
+
+
 .product-container {
+    
     max-width: 800px;
     margin: 50px auto;
     padding: 30px;
@@ -180,16 +163,19 @@ header ul li{
     gap: 30px;
 }
 .product-image {
+   
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     overflow: hidden;
 }
 .product-image img {
+    
     width: 100%;
     height: auto;
     border-radius: 15px;
 }
 .product-info {
+    
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     display: flex;
@@ -210,11 +196,12 @@ header ul li{
     margin-top: -20px; 
 }
 .pagos-medio {
-    background-image: url("C:\Users\djtac\OneDrive\Desktop\producto\img\wallet-svgrepo-com.svg");
+    background-image: url("img/11111.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 20%;
-    height: 50px;
+    width: 15%;
+    height: 100%;
+    
 }
 .payment{
     display: flex;
@@ -240,6 +227,7 @@ header ul li{
     background-color: grey;
 }
 .product-description {
+    display: flex;
     grid-column: 1 / 3;
     grid-row: 2 / 3;
     background-color: #f9f9f9;
@@ -249,19 +237,25 @@ header ul li{
     line-height: 1.8;
 }
 .info-box {
+    
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 15px;
     font-size: 16px;
 }
-footer{
-    background-color: grey;
+footer {
+    background-color: black;
     padding: 0px 30px;
-    width: auto;
+    width: 100%; 
+    height: 180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    bottom: 0; 
+    left: 0;
 }
+
 .pagos {
     display: flex;
     background-image: url("/lenoir/screens/img/pago.svg");
@@ -270,8 +264,8 @@ footer{
     align-items: center;
     width: 100%;
     height: 70px;
-
 }
+
 .logofooter {
     display: flex;
     background-image: url("/lenoir/screens/img/logo-footer.svg");
@@ -281,25 +275,31 @@ footer{
     width: 80px;
     height: 120px;
 }
+
 .pago{
+    
     flex-direction: column;
     width: 30%;
     height: 85%;
     align-self: center;
-    
+   
 }
-.medios_pago{
+
+.medios_pago {
     text-transform: uppercase;
     width: 40%;
     font-size: 12px;
+
 }
-.contacto{
+
+.contacto {
     font-size: 12px;
     width: 10%;
     height: 85%;
     align-self: center;
     text-transform: uppercase;
 }
+
 .social-icon {
     height: 50px;
     width: 50px;
@@ -311,25 +311,31 @@ footer{
     background-size: 70%;
     margin: 1rem;
 }
+
 .social-media, .social-footer{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
+
 .social-icon:hover{
     background-color: #ff8a00;
 }
+
 .social-icon:nth-of-type(2){
     background-image: url("/lenoir/screens/img/ig.svg");
+}
+
+h3, p{
+    color: white;
 }
 
 .copyright {
     display: inline-block;
     vertical-align: middle;
     color: #5e5e5e;
-    font-size: 15px;
-    text-transform: lowercase;
     font-size: 12px;
+    text-transform: lowercase;
     letter-spacing: 1px;
 }

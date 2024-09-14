@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Cervezas</title>
-    <link rel="stylesheet" href="vinos.css">
+    <title>ofertas</title>
+    <link rel="stylesheet" href="ofertas.css">
 </head>
 <body>
-
     <header class="head">
         <div class="upper-header">
             <sub>💳incluimos vasos y hielos en todos los combos - envío gratis a todo CABA 🚚</sub> 
         </div>
         <div class="nav">
-             <a href="/lenoir/screens/index.html" id="lenoirhead"></a>
+            
+            <a href="/lenoir/screens/index.html" id="lenoirhead"></a>
             <ul class="categories">
                 <li><a href="/lenoir/screens/vinos.html">Vinos</a>
                     <ul class="submenu">
@@ -47,40 +46,37 @@
             </div>
         </div>
     </header>
-   
-    <main>
-        <div class="catalog">
-            <div class="product">
-                <div class="corona"></div>
-                <p>Corona</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
-            </div>
-            <div class="product">
-                <div class="patagonia"></div>
-                <a href="/lenoir/screens/img/patagonia.png"></a>
-                <p>Patagonia 24.7</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
-            </div>
-            <div class="product">
-                <div class="quilmes"></div>
-                <a href="/lenoir/screens/img/quilmes.jpg"></a>
-                <p>Quilmes</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
-            </div>
-            <div class="product">
-                <div class="heineken"></div>
-                <a href="/lenoir/screens/img/heineken.png"></a>
-                <p>Patagonia Amber Lager</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
+    <div class="grid-container">
+        <div class="product">
+            <img src="img/ofertas3.jpg" alt="Producto 1">
+            <div class="product-info">
+                <h3 class="product-title">Producto 1</h3>
+                <p class="product-price">$3000</p>
+                <p class="product-desc">Ideales para reuniones</p>
+                <a href="#" class="btn-buy">Comprar</a>
             </div>
         </div>
-    </main>
 
-  
+        <div class="product">
+            <img src="img/ofertas2.jpeg" alt="Producto 2">
+            <div class="product-info">
+                <h3 class="product-title">Producto 2</h3>
+                <p class="product-price">$5000</p>
+                <p class="product-desc">Licores para preparar</p>
+                <a href="#" class="btn-buy">Comprar</a>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="img/ofertas.jpg" alt="Producto 3">
+            <div class="product-info">
+                <h3 class="product-title">Producto 3</h3>
+                <p class="product-price">$36000</p>
+                <p class="product-desc">De gusto popular</p>
+                <a href="#" class="btn-buy">Comprar</a>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="pago">
             <div class="medios_pago">
@@ -100,7 +96,7 @@
 
         </div>
     </footer>
-    
 
+    
 </body>
 </html>

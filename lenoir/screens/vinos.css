@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Supermercado+One&display=swap');
+
+@media(min-width:991px){
+}
+
 body{
     border:0;
     margin: 0;
@@ -159,12 +164,16 @@ main {
 
 .catalog {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 
 .product {
     margin-bottom: 20px;
+    align-items: center;
+    align-self: center;
+    padding: 10px;
+    
 }
 
 .product img {
@@ -176,6 +185,7 @@ main {
 .product p {
     margin: 10px 0;
     font-size: 1.2em;
+    color: black;
 }
 
 .product button {
@@ -191,6 +201,63 @@ main {
     background-color: grey;
 }
 
+.vinobianchi{
+    background-image: url("img/Bianchi_Varietales_-_Malbec_2048x2048.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 250px;
+}
+.vinochaca{
+    background-image: url("img/vinochacabuco.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 250px;
+}
+.vinochaca{
+    background-image: url("img/vinochacabuco.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 250px;
+}
+.toro{
+    background-image: url("img/vinotoro.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 250px;
+}
+.heineken{
+    background-image: url("img/heineken.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 250px;
+}
+.corona{
+    background-image: url("img/corona.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 250px;
+}
+.quilmes{
+    background-image: url("img/quilmes.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 250px;
+}
+.patagonia{
+    background-image: url("img/patagonia.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 250px;
+}
+
 footer {
     background-color: black;
     padding: 0px 30px;
@@ -199,7 +266,6 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed; 
     bottom: 0; 
     left: 0;
 }
@@ -284,3 +350,4 @@ h3, p{
     text-transform: lowercase;
     letter-spacing: 1px;
 }
+

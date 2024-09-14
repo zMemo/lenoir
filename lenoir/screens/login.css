@@ -40,10 +40,11 @@ form {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 100%;
+    width: 20%;
     height: 300px;
     margin: auto;
     }
+
 input{
     padding:17px 11px;
     border: 0px;
