@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Cervezas</title>
-    <link rel="stylesheet" href="vinos.css">
+    <title>Lenoir</title>
+    <link rel="stylesheet" href="indexstyle.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 <body>
-
+    
     <header class="head">
         <div class="upper-header">
             <sub>💳incluimos vasos y hielos en todos los combos - envío gratis a todo CABA 🚚</sub> 
         </div>
         <div class="nav">
-             <a href="/lenoir/screens/index.html" id="lenoirhead"></a>
+            
+            <a href="/lenoir/screens/index.html" id="lenoirhead"></a>
             <ul class="categories">
-                <li><a href="/lenoir/screens/vinos.html">Vinos</a>
+                <li><a class="underlined" href="/lenoir/screens/vinos.html">BEBIDAS</a>
                     <ul class="submenu">
                         <li><a href="#">Blancos</a></li>
                         <li><a href="#">Tintos</a></li>
                         <li><a href="#">Rosados</a></li>
                     </ul>
                 </li>
-                <li><a href="/lenoir/screens/cerveza.html">Cervezas</a>
+                <li><a class="underlined" href="/lenoir/screens/cerveza.html">OFERTAS</a>
                     <ul class="submenu">
                         <li><a href="#">Rubia</a></li>
                         <li><a href="#">Negra</a></li>
                         <li><a href="#">Sin alcohol</a></li>
                     </ul>
                 </li>
-                <li><a href="/lenoir/screens/ofertas.html">Ofertas</a></li>
-                <li><a href="/lenoir/screens/consultas.html">Contacto</a></li>
+                <li><a class="underlined" href="/lenoir/screens/ofertas.html">MI PEDIDO</a></li>
+                <li><a class="underlined" href="/lenoir/screens/consultas.html">CONTACTO</a></li>
             </ul>
+            <div class="search-bar">
+                <div id="search-icon"></div>
+                <input type="text" placeholder="">
+            </div>
             <div class="account">
-                <a id="search" href=""></a>
+               
                 <div>
                     <ul class="categories">
                         <li><a id="cuenta" href="#"></a>
@@ -45,42 +51,67 @@
                         </div>
                     <a id="carrito" href=""></a>
             </div>
+          
         </div>
     </header>
-   
-    <main>
-        <div class="catalog">
-            <div class="product">
-                <div class="corona"></div>
-                <p>Corona</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
+
+
+
+
+    <div class="cuerpo">
+        <div id="carrousel"></div>
+        
+        <div class="mid" >
+            <div class="midcolumn">
+                <div class="midcircle" id="moto"></div>
+                
+                <div class="midbox">
+                <h6>ENTREGAS EN EL DIA</h6>
+                <span>Entregamos en el dia de la misma compra</span>
+                </div>
             </div>
-            <div class="product">
-                <div class="patagonia"></div>
-                <a href="/lenoir/screens/img/patagonia.png"></a>
-                <p>Patagonia 24.7</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
+            <div class="midcolumn">
+                <div class="midcircle" id="bank"></div>
+                
+                <div class="midbox">
+                    <h6>EFECTIVO/TRANSFERENCIA</h6>
+                </div>
             </div>
-            <div class="product">
-                <div class="quilmes"></div>
-                <a href="/lenoir/screens/img/quilmes.jpg"></a>
-                <p>Quilmes</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
-            </div>
-            <div class="product">
-                <div class="heineken"></div>
-                <a href="/lenoir/screens/img/heineken.png"></a>
-                <p>Patagonia Amber Lager</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
+            <div class="midcolumn">
+                <div class="midcircle" id="event"></div>
+                
+                <div class="midbox">
+                    <h6>ASISTENCIA EN EVENTOS</h6>
+                    <span>Nos encargamos de cubrir todas las necesidades para que no falte nada en tu fiesta</span>
+                </div>
             </div>
         </div>
-    </main>
+        
 
-  
+
+
+        <h1>Promo del Finde</h1>
+        <div class="container">
+            <div class="item">
+                <div class="item1"></div>
+                <button>Agregar al carrito</button>
+            </div>
+            <div class="item">
+                <div class="item3"></div>
+                <button>Agregar al carrito</button>
+            </div>
+            <div class="item">
+                <div class="item3"></div>
+                <button>Agregar al carrito</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
     <footer>
         <div class="pago">
             <div class="medios_pago">
@@ -100,7 +131,5 @@
 
         </div>
     </footer>
-    
-
 </body>
 </html>
