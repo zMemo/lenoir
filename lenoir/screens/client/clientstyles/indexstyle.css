@@ -170,7 +170,7 @@ header ul li a:hover{
     padding: 0 20px;
 }
 #lenoirhead {
-    background-image: url("img/logonegro.png");
+    background-image: url("/lenoir/screens/img/logonegro.png");
     background-size: cover; 
     background-repeat: no-repeat;
     width: 250px; 
@@ -204,13 +204,12 @@ header ul li a:hover{
 }
 
 #search-icon{
-    background-image: url("img/search.svg");
+    background-image: url("/lenoir/screens/img/search.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     width: 30px;
     height: 30px;
-     
 }
 
 /* Iconos de cuenta y carrito */
@@ -230,11 +229,11 @@ header ul li a:hover{
 }
 
 #cuenta {
-    background-image: url("img/cuenta.svg");
+    background-image: url("/lenoir/screens/img/cuenta.svg");
 }
 
 #carrito {
-    background-image: url("img/carrito.svg");
+    background-image: url("/lenoir/screens/img/carrito.svg");
 }
 .cuerpo{
     display: flex;
@@ -245,7 +244,7 @@ header ul li a:hover{
 }
 #carrousel{
     display: flex;
-    background-image: url("img/fondo.jpeg");
+    background-image: url("/lenoir/screens/img/fondo.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -284,19 +283,19 @@ header ul li a:hover{
     }
 
 #moto{
-    background-image: url("img/moto.svg");
+    background-image: url("/lenoir/screens/img/moto.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
 }
 #bank{
-    background-image: url("img/bank.svg");
+    background-image: url("/lenoir/screens/img/bank.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
 }
 #event{
-    background-image: url("img/event.svg");
+    background-image: url("/lenoir/screens/img/event.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -360,7 +359,7 @@ span{
 }
 
 .offer1{
-    background-image: url("img/gancia.jpg");
+    background-image: url("/lenoir/screens/img/gancia.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -370,7 +369,7 @@ span{
 
 }
 .offer2{
-    background-image: url("img/jaggermeister.jpg");
+    background-image: url("/lenoir/screens/img/jaggermeister.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -379,7 +378,7 @@ span{
     border-radius: 50%
 }
 .offer3{
-    background-image: url("img/fernet.jpg");
+    background-image: url("/lenoir/screens/img/fernet.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
