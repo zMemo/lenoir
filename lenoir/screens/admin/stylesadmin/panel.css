@@ -45,6 +45,85 @@ a{
 /*basico*/
 
 
+/*addproducto*/
+
+.box-form{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.boxaddprod{
+    margin-top: 100px;
+}
+.boxclose{
+    width: 20%;
+    margin-left: 10px;
+}
+.boxnormal{
+    width: 70%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.boxtext{
+    width: 70%;
+    height: 200px;
+    margin-right: 10px;
+}
+.boximg{
+    width: 70%;
+    height: 200px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1080px) {
+    .box-form{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .box-form{
+        text-align: center;
+        width: 80%;
+        display: block;
+        justify-content: center;
+    }
+    .boxclose{
+        transform: right;
+        width: 33%;
+        margin: auto;
+    }
+
+}
+
+/*add producto*/
+
+/*add producto*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*add producto*/
+
+
+
 
 
 
@@ -122,7 +201,6 @@ a{
         width: 50%;
         margin-left: 25%;
     }
- 
 }
 
 
