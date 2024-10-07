@@ -1,8 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Supermercado+One&display=swap');
-
-@media(min-width:991px){
-}
-
 body{
     border:0;
     margin: 0;
@@ -46,7 +41,11 @@ header ul li{
     display: inline-block;
     list-style: none;
     margin: 0 30px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ffffff;
+    
+}
+.underlined{
+    line-height: 1px;
 }
 header ul li:last-child{
     margin-right: 0;
@@ -58,6 +57,55 @@ header ul li a{
     display: inline-block;
     transition: all ease 0.3s;
     font-size: 18px;
+ 
+
+}
+h1 {
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item img {
+    width: 200px;
+    height: 200px;
+    background-color: black; 
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+.item1{
+    width: 200px;
+    height: 200px;
+    background-color: black; 
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #444;
 }
 header ul li a:hover{
     color: #ff8a00;
@@ -105,16 +153,15 @@ header ul li a:hover{
 
 .nav {
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    width: 100%; 
-    height: 100px; 
-    position: relative; 
-    padding: 0 20px; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    position: relative;
+    padding: 0 20px;
 }
-
 #lenoirhead {
-    background-image: url("img/logonegro.png");
+    background-image: url("/lenoir/screens/img/logonegro.png");
     background-size: cover; 
     background-repeat: no-repeat;
     width: 250px; 
@@ -125,35 +172,76 @@ header ul li a:hover{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-grow: 1; 
+    flex-grow: 1;
     padding-left: 20px;
 }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: -30px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    width: 250px;
+    
+}
+
+#search-icon{
+    background-image: url("/lenoir/screens/img/search.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+/* Iconos de cuenta y carrito */
 .account {
     display: flex;
     align-items: center;
     gap: 15px;
-    right: 20px; 
-    top: 50%; 
-    
     padding-right: 40px;
 }
-.account a{
-    width: 40px; 
+
+.account a {
+    width: 40px;
     height: 40px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 #cuenta {
-    background-image: url("img/cuenta.svg");
-}
-#carrito {
-    background-image: url("img/carrito.svg");
-}
-#search{
-    background-image: url("img/search.svg");
+    background-image: url("/lenoir/screens/img/cuenta.svg");
 }
 
+#carrito {
+    background-image: url("/lenoir/screens/img/carrito.svg");
+}
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 1250px;
+    position: relative;
+}
+#carrousel{
+    display: flex;
+    background-image: url("/lenoir/screens/img/fondo.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    border-bottom: 1px solid white;
+}
 
 main {
     padding: 0;
@@ -161,11 +249,33 @@ main {
     border: 0;
     text-align: center;
 }
-
-.catalog {
+.content-products{
+    background-color: #D9D9D9;
+    margin: 3%;
+}
+.valor{
+    text-align: left;
     display: flex;
-    flex-direction: row;
+    
+}
+.tamano-productos{
+    max-width: 250px;
+    max-height: 250px;
+    margin-bottom: 20px;
+}
+.productos-info{
+    display: flex;
+}
+.contador{
+    align-items: right;
+    display: flex;
+    margin-left: 40px;
+    margin-bottom: 5px;
+}
+.catalog {
+    flex-wrap: wrap;
     align-items: center;
+    display: flex;
 }
 
 .product {
@@ -173,6 +283,8 @@ main {
     align-items: center;
     align-self: center;
     padding: 10px;
+    max-width: 17%;
+    
     
 }
 
@@ -202,32 +314,30 @@ main {
 }
 
 .vinobianchi{
-    background-image: url("img/Bianchi_Varietales_-_Malbec_2048x2048.jpg");
+    background-image: url("/lenoir/screens/img/vinito.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 70%;
+    width: 100%;
     height: 250px;
 }
+
 .vinochaca{
-    background-image: url("img/vinochacabuco.jpg");
+    background-image: url("/lenoir/screens/img/vinito.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 70%;
+    width: 100%;
     height: 250px;
-}
-.vinochaca{
-    background-image: url("img/vinochacabuco.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 250px;
+    
+    
 }
 .toro{
-    background-image: url("img/vinotoro.jpg");
+    background-image: url("/lenoir/screens/img/vinito.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 70%;
+    width: 100%;
     height: 250px;
+    
+    
 }
 .heineken{
     background-image: url("img/heineken.png");
@@ -258,18 +368,16 @@ main {
     height: 250px;
 }
 
-footer {
+footer{
     background-color: black;
     padding: 0px 30px;
-    width: 100%; 
+    width: auto;
     height: 180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    bottom: 0; 
-    left: 0;
+    flex-wrap: wrap;
 }
-
 .pagos {
     display: flex;
     background-image: url("/lenoir/screens/img/pago.svg");
@@ -278,8 +386,8 @@ footer {
     align-items: center;
     width: 100%;
     height: 70px;
-}
 
+}
 .logofooter {
     display: flex;
     background-image: url("/lenoir/screens/img/logo-footer.svg");
@@ -289,28 +397,27 @@ footer {
     width: 80px;
     height: 120px;
 }
-
 .pago{
     flex-direction: column;
     width: 30%;
     height: 85%;
     align-self: center;
+    
 }
-
-.medios_pago {
+.medios_pago{
     text-transform: uppercase;
     width: 40%;
     font-size: 12px;
+    padding-bottom: 10px;
 }
-
-.contacto {
+.contacto{
     font-size: 12px;
     width: 10%;
     height: 85%;
     align-self: center;
     text-transform: uppercase;
+    text-align: center;
 }
-
 .social-icon {
     height: 50px;
     width: 50px;
@@ -322,32 +429,35 @@ footer {
     background-size: 70%;
     margin: 1rem;
 }
-
 .social-media, .social-footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
-
 .social-icon:hover{
     background-color: #ff8a00;
 }
-
 .social-icon:nth-of-type(2){
     background-image: url("/lenoir/screens/img/ig.svg");
 }
-
 h3, p{
-    color: white;
+    color: white;   
 }
-
 .copyright {
+    margin-top: 30px;
     display: inline-block;
-    vertical-align: middle;
     color: #5e5e5e;
     font-size: 12px;
-    text-transform: lowercase;
     letter-spacing: 1px;
 }
 
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        width: 100%;
+        text-align: center;
+    }
+}
