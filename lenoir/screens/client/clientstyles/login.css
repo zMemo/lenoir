@@ -1,17 +1,4 @@
-@media(max-width:991px){
 
-    body{
-        padding:30px;
-    }
-
-    form{
-        width:100%;
-    }
-
-    .remember{
-        flex-direction: column;
-    }
-}
 * {
     margin: 0;
     padding: 0;
@@ -83,7 +70,22 @@ a{
 a:hover{
     color: darkgrey;
 }
+
 @media(max-width:991px){
+
+    body{
+        padding:30px;
+    }
+
+    form{
+        width:100%;
+    }
+
+    .remember{
+        flex-direction: column;
+    }
+}
+@media(max-width:480px){
 
     body{
         padding:30px;
