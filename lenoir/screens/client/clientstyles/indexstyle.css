@@ -1,8 +1,5 @@
 
 
-@media(min-width:991px){
-}
-
 body {
     border: 0;
     margin: 0;
@@ -234,6 +231,66 @@ header ul li a:hover{
 
 #carrito {
     background-image: url("/lenoir/screens/img/carrito.svg");
+    
+}
+.cart-sidebar {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -5px 0 5px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.cart-sidebar.open {
+    right: 0; /* Se despliega desde el costado derecho */
+}
+
+/* Cabecera del carrito */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+}
+
+.cart-header h2 {
+    margin: 0;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Contenido del carrito (productos) */
+
+
+.cart-items {
+    padding: 15px;
+    height: calc(100% - 120px);
+    overflow-y: auto;
+}
+
+.cart-footer {
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.cart-footer button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
 }
 .cuerpo{
     display: flex;
@@ -391,7 +448,6 @@ span{
 
 
 
-
 footer{
     background-color: black;
     padding: 0px 30px;
@@ -400,6 +456,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 .pagos {
     display: flex;
@@ -473,3 +530,5 @@ h3, p{
     font-size: 12px;
     letter-spacing: 1px;
 }
+
+

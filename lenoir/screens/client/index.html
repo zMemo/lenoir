@@ -16,9 +16,9 @@
         </div>
         <div class="nav">
             
-            <a href="/lenoir/screens/index.html" id="lenoirhead"></a>
+            <a href="/lenoir/screens/client/index.html" id="lenoirhead"></a>
             <ul class="categories">
-                <li><a class="underlined" href="/lenoir/screens/vinos.html">BEBIDAS</a>
+                <li><a class="underlined" href="/lenoir/screens/client/vino.html">BEBIDAS</a>
                     <ul class="submenu">
                         <li><a href="vino.html">vinos</a></li>
                         <li><a href="cerveza.html">cervezas</a></li>
@@ -41,18 +41,27 @@
                     <ul class="categories">
                         <li><a id="cuenta" href="#"></a>
                             <ul class="submenu">
-                                <li><a href="/lenoir/screens/login.html">Login</a></li>
+                                <li><a href="/lenoir/screens/client/login.html">Login</a></li>
                                 <li><a href="/lenoir/screens/client/register.html">Register</a></li>
                             </ul>
                         </div>
                     <a id="carrito" href=""></a>
+                    <div id="cart-sidebar" class="cart-sidebar">
+                        <div class="cart-header">
+                            <h2>Tu Carrito</h2>
+                            <span id="close-cart" class="close-btn">&times;</span>
+                        </div>
+                        <div class="cart-items">
+                            
+                        </div>
+                        <div class="cart-footer">
+                            <p>Total: $0.00</p>
+                            <button>Ir a Pagar</button>
+                        </div>
             </div>
         </div>
     </header>
-
-
-
-
+ 
     <div class="cuerpo">
         <div id="carrousel"></div>
         
@@ -126,5 +135,6 @@
 
         </div>
     </footer>
+    <script src="/lenoir/screens/client/scripts/carrito.js"></script>
 </body>
 </html>

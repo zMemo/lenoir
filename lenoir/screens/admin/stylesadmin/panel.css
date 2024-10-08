@@ -584,7 +584,6 @@ table th{
     }
 }
 
-/* Media Query para pantallas muy pequeñas (móviles) */
 @media (max-width: 480px) {
     .search-bar {
         width: 100%;

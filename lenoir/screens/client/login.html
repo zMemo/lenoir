@@ -9,12 +9,14 @@
 
 </head>
 <body>
-    <a href="/lenoir/screens/index.html"><div class="logo"></div></a>
-    <form>
-        <input type="text" id="username" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Contraseña" required> 
+    <a href="/lenoir/screens/client/index.html"><div class="logo"></div></a>
+    <form method="post" id="login">
+        <input type="text" id="username" placeholder="Email">
+        <input type="password" id="password" placeholder="Contraseña"> 
         <input type="submit" class="btn"value="Iniciar sesion">
+        <p class="warnings" id="warnings"></p>
         <a href="/lenoir/screens/client/register.html">CREAR CUENTA NUEVA</a>
     </form>
+    <script src="/lenoir/screens/client/scripts/login.js"></script>
 </body>
 </html>

@@ -1,10 +1,9 @@
-//login
+const parrafo = document.getElementById("warnings")
+const formlogin = document.getElementById("login")
 const username = document.getElementById("username")
 const password = document.getElementById("password")
-const form = document.getElementById("form")
-const parrafo = document.getElementById("warnings")
 
-form.addEventListener("submit", e=>{
+formlogin.addEventListener("submit", e=>{
     e.preventDefault()
     let warnings = ""
     let entrar = false
@@ -20,16 +19,6 @@ form.addEventListener("submit", e=>{
     if(entrar){
         parrafo.innerHTML = warnings
     }else{
-        parrafo.innerHTML = "Bienvenido..."
+        parrafo.innerHTML = "ingresando..."
     }
 })
-
-
-//login
-
-
-
-//    if(regexEmail.test(email.value)){
-//        warnings += "El email no es valido <br>"
-//        entrar = true
-//    }

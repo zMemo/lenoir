@@ -5,7 +5,9 @@
     <meta charset= "UTF-8">
     <meta http-equiv= "X-UA-Compatible" content="IE=edge">
     <meta name= "viewport" content="width-device-width, initial-scale=1.0">
+    <title>Contacto</title>
     <link type="text/css" href="/lenoir/screens/client/clientstyles/contacto.css" rel="stylesheet"/>
+    
 </head>
 <body>
     
@@ -15,7 +17,7 @@
         <sub>💳incluimos vasos y hielos en todos los combos - envío gratis a todo CABA 🚚</sub> 
     </div>
     <div class="nav">
-        <a href="/lenoir/screens/index.html" id="lenoirhead"></a>
+        <a href="/lenoir/screens/client/index.html" id="lenoirhead"></a>
         <ul class="categories">
             <li><a class="underlined" href="/lenoir/screens/vinos.html">BEBIDAS</a>
                 <ul class="submenu">
@@ -46,17 +48,18 @@
 </header>
 
 <div class="Adminlogin">
-    <form method="post">
+    <form method="post" id="contacto">
         <div class="Email"> 
-            <input type="text" placeholder="Email" required>
+            <input type="text" id="emailcontacto" placeholder="Email">
         </div>
         <div class="Asunto">
-            <input type="text" placeholder="Asunto" required>
+            <input type="text" id="asunto" placeholder="Asunto">
         </div>
         <div class="Consulta">
-            <textarea placeholder="Desarrolle su consulta" required></textarea>
+            <input type="text" id="descripcion" placeholder="Desarrolle su consulta"></input>
         </div>
         <input type="submit" value="Enviar">
+        <p class="warnings" id="warnings"></p>
     </form>
 </div>
 
@@ -80,6 +83,8 @@
 
         </div>
     </footer>
+    
+    <script src="/lenoir/screens/client/scripts/contacto.js"></script>
 </body>
 
 </html>
