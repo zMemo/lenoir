@@ -23,7 +23,7 @@ form {
     margin: auto;
 }
 .logo{
-    background-image: url("img/logo-footer.svg");
+    background-image: url("/lenoir/screens/img/logo-footer.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -76,7 +76,9 @@ a:hover{
     body{
         padding:30px;
     }
-
+    .logo{
+        width: 100%;
+    }
     form{
         width:100%;
     }
@@ -87,11 +89,13 @@ a:hover{
 }
 @media(max-width:480px){
 
-    body{
+    .body{
         padding:30px;
     }
-
-    form{
+    .logo{
+        width: 100%;
+    }
+    .form{
         width:100%;
     }
 

@@ -151,7 +151,7 @@ header ul li a:hover{
 
 
 .product-container {
-    
+   
     max-width: 800px;
     margin: 50px auto;
     padding: 30px;
@@ -163,10 +163,11 @@ header ul li a:hover{
     gap: 30px;
 }
 .product-image {
-   
+    background-image: url("/lenoir/screens/img/FernetBrancaOrigenArgentino_bodegaslacatedral\ \(1\).jpg");
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     overflow: hidden;
+    
 }
 .product-image img {
     
@@ -196,7 +197,7 @@ header ul li a:hover{
     margin-top: -20px; 
 }
 .pagos-medio {
-    background-image: url("img/11111.png");
+    background-image: url("/lenoir/screens/img/mediospago.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 15%;
