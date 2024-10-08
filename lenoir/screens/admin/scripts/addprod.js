@@ -5,20 +5,32 @@ const precio = document.getElementById("precio")
 const stock = document.getElementById("stock")
 const marca = document.getElementById("marca")
 const categoria = document.getElementById("categoria")
-const warnings = document.getElementById("warnings")
 
-formlogin.addEventListener("submit", e=>{
+formprod.addEventListener("submit", e=>{
     e.preventDefault()
     let warnings = ""
     let entrar = false
+    let regprecio = /^[0-9]{1,8}$/
     parrafo.innerHTML = ""
-    if(username.value.length <6){
-        warnings += "el nombre no es valido <br>"
+    if(producto.value.length<1){
+        warnings += "campo producto esta vacio <br>"
         entrar = true
     }
-    if(password.value.length<8){
-        warnings += "la contraseña no es valida <br>"
+    if(marca.value.length<1){
+        warnings += "campo marca esta vacio <br>"
         entrar  = true
+    }
+    if(!regprecio.test(precio.value)){
+        warnings += "precio no valido <br>"
+        entrar  = true
+    }
+    if(stock.value.length<1){
+        warnings += "campo stock no valido <br>"
+        entrar  = true
+    }
+    if (categoria.value.length <1) {
+        warnings += "campo categoria esta vacio <br>"
+        entrar = true
     }
     if(entrar){
         parrafo.innerHTML = warnings

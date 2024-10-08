@@ -18,6 +18,12 @@ body {
 a{
     text-decoration: none;
 }
+@media screen {
+    
+}
+@media screen {
+    
+}
 /*   LO DEL ARRIBA DE HEADER */
 .upper-header{
     display: flex;
@@ -36,7 +42,7 @@ a{
 .head{
     display: flex;
     background-color: black;
-    color: #000000;
+    color: white; /* Changed text color to white for better contrast */
     margin: 0;
     border:0;
     flex-direction: column;
@@ -86,14 +92,7 @@ h1 {
     align-items: center;
 }
 
-.item img {
-    width: 200px;
-    height: 200px;
-    background-color: black; 
-    margin-bottom: 10px;
-    object-fit: cover;
-}
-.item1{
+.item img, .item1 {
     width: 200px;
     height: 200px;
     background-color: black; 
@@ -255,7 +254,7 @@ header ul li a:hover{
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: #333;
+    background-color: black;
     color: white;
 }
 
@@ -279,7 +278,7 @@ header ul li a:hover{
 
 .cart-footer {
     padding: 15px;
-    background-color: #333;
+    background-color: black;
     color: white;
     text-align: center;
 }
@@ -292,13 +291,7 @@ header ul li a:hover{
     cursor: pointer;
     width: 100%;
 }
-.cuerpo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 1250px;
-    position: relative;
-}
+
 #carrousel{
     display: flex;
     background-image: url("/lenoir/screens/img/fondo.jpeg");
@@ -366,84 +359,6 @@ span{
 }
 /*  termina parte media cualidades de lenoir */
 
-
-
-/*  empieza parte combos de lenoir */
-.promotxt{
-    background-color: #f3f3f3;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-#promo{
-    display: flex;
-    background-color: #f3f3f3;
-    height:700px;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.offer{
-    height: 30em;
-    width: 25em;
-    text-align: center;
-    
-}
-.offer h5{
-    color:  black;
-    font-size: 26px;
-}
-.offer p{
-    color: black;
-    font-size: 20;
-}
-.btnagregar{
-    text-decoration: none;
-    width: 8rem;
-    height: 2rem;
-    font-size: 14px;
-    border-radius: 6px;
-    border: none;
-    outline: none;
-    position: relative;
-    background-color: black ;
-    text-transform: uppercase;
-    color: white;
-}
-.btnagregar:hover{
-    background-color: grey;
-}
-
-.offer1{
-    background-image: url("/lenoir/screens/img/gancia.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 85%;
-    width: 100%;
-    border-radius: 50%
-
-}
-.offer2{
-    background-image: url("/lenoir/screens/img/jaggermeister.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 85%;
-    width: 100%;
-    border-radius: 50%
-}
-.offer3{
-    background-image: url("/lenoir/screens/img/fernet.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 85%;
-    width: 100%;
-    border-radius: 50%
-}
-/*  termina parte combos de lenoir */
 
 
 
@@ -531,4 +446,185 @@ h3, p{
     letter-spacing: 1px;
 }
 
+/* Media Queries Ajustadas */
 
+@media (max-width: 576px) {
+    .nav {
+        height: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .account {
+        height: auto; /* Cambiado a auto para mejor ajuste */
+        flex-direction: column;
+    }
+
+    #cuenta, #carrito {
+        width: 150px;
+    }
+
+    .responsive-nav {
+        display: flex;
+        align-items: baseline;
+    }
+
+    header ul li {
+        margin: 0 15px;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+
+    .account {
+        padding: 0;
+    }
+
+    .product p {
+        font-size: 14px; /* Asegurarse que el texto no quede pequeño */
+    }
+
+    .categories {
+        text-align: left;
+    }
+
+    .mid {
+        flex-direction: column;
+        align-items: center; /* Alinear elementos al centro */
+        padding: 20px 0; /* Espacio entre las columnas */
+    }
+
+    .midcolumn {
+        margin-bottom: 20px; /* Espacio entre columnas en móvil */
+        width: 90%; /* Mejorar el ancho en móvil */
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 20px 10px;
+        align-items: center; /* Centrar contenido del footer */
+    }
+
+    .pago, .contacto, .logofooter {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    h3, p {
+        font-size: 14px;
+    }
+
+    .logofooter {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    header ul {
+        flex-direction: row;
+    }
+
+    .product img, .tamano-productos, .item img, .item1 {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    #lenoirhead {
+        width: 200px;
+        height: 80px;
+        background-size: contain;
+    }
+
+    footer {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center; /* Alinear contenido del footer */
+    }
+
+    .pago, .contacto, .logofooter {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    h3, p {
+        font-size: 14px;
+    }
+
+    .logofooter {
+        display: none;
+    }
+
+    .mid {
+        flex-direction: column;
+        align-items: center; /* Alinear elementos al centro */
+    }
+
+    .midcolumn {
+        width: 80%; /* Asegurarse de que las columnas ocupen más espacio */
+    }
+}
+
+@media (max-width: 1000px) {
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product img, .tamano-productos, .item img, .item1 {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    #lenoirhead {
+        width: 200px;
+        height: 80px;
+        background-size: contain;
+    }
+
+    footer {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center; /* Alinear contenido del footer */
+    }
+
+    .pago, .contacto, .logofooter {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .mid {
+        flex-direction: column;
+        align-items: center; /* Alinear elementos al centro */
+    }
+
+    .midcolumn {
+        width: 90%; /* Asegurarse de que las columnas ocupen más espacio */
+        margin-bottom: 20px; /* Espacio entre columnas en dispositivos más grandes */
+    }
+
+    .logofooter {
+        display: none;
+    }
+}
+
+@media (min-width: 1001px) {
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

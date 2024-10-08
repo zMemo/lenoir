@@ -197,32 +197,7 @@ header ul li a:hover{
     flex-grow: 1;
 }
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-right: -30px;
-}
 
-.search-bar input {
-    border: none;
-    outline: none;
-    padding: 5px;
-    font-size: 16px;
-    width: 250px;
-    
-}
-
-#search-icon{
-    background-image: url("/lenoir/screens/img/search.svg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-}
 
 /* Iconos de cuenta y carrito */
 .account {
@@ -289,6 +264,25 @@ main {
     text-align: left;
     display: flex;
     
+    
+    
+    
+}
+.valorofertas1{
+    display:flex;
+    text-align: left;
+    text-decoration: line-through;
+    text-decoration-color: red; 
+}
+
+.valorofertas2{
+    display:flex;
+    text-align: left;
+    
+}
+.ofertas{
+    gap:10px
+
 }
 .tamano-productos{
     max-width: 250px;
@@ -684,11 +678,10 @@ h3, p{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
     }
 
-    header ul {
-        flex-direction: column;
-    }
+    
     .product img, .tamano-productos, .item img, .item1 {
         width: 250px;
         height: 250px;
