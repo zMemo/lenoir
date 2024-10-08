@@ -17,11 +17,11 @@ formregister.addEventListener("submit", e=>{
         warnings += "el nombre no es valido <br>"
         entrar = true
     }
-    if(username.value.length <6){
+    if(user.value.length <6){
         warnings += "el usuario no es valido <br>"
         entrar = true
     }
-    if(numero.value.length<8){
+    if(numero.value.length<9){
         warnings += "el numero no es valido <br>"
         entrar = true
     }

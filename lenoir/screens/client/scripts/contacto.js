@@ -11,7 +11,7 @@ formcontacto.addEventListener("submit", e=>{
     let entrar = false
     parrafo.innerHTML = ""
     let regexemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if(!regexemail.test(email.value)){
+    if(!regexemail.test(emailcontacto.value)){
         warnings += "el email no es valido <br>"
         entrar = true
     }
@@ -19,7 +19,7 @@ formcontacto.addEventListener("submit", e=>{
         warnings += "el asunto es muy corto <br>"
         entrar = true
     }
-    if(mensaje.value.length < 10){
+    if(desc.value.length < 10){
         warnings += "el mensaje es muy corto <br>"
         entrar = true
     }
