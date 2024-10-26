@@ -15,6 +15,18 @@ body {
     box-sizing: border-box;
     outline: none;
 }
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
 a{
     text-decoration: none;
 }
@@ -42,7 +54,7 @@ a{
 .head{
     display: flex;
     background-color: black;
-    color: white; /* Changed text color to white for better contrast */
+    color: white; 
     margin: 0;
     border:0;
     flex-direction: column;
@@ -245,10 +257,10 @@ header ul li a:hover{
 }
 
 .cart-sidebar.open {
-    right: 0; /* Se despliega desde el costado derecho */
+    right: 0; 
 }
 
-/* Cabecera del carrito */
+
 .cart-header {
     display: flex;
     justify-content: space-between;
@@ -267,7 +279,7 @@ header ul li a:hover{
     font-size: 24px;
 }
 
-/* Contenido del carrito (productos) */
+
 
 
 .cart-items {
@@ -446,67 +458,87 @@ h3, p{
     letter-spacing: 1px;
 }
 
-/* Media Queries Ajustadas */
+
 
 @media (max-width: 576px) {
     .nav {
+    
+        width: auto;
         height: auto;
-    }
+        flex-direction: column;
+  }
 
     .container {
         flex-direction: column;
         padding: 10px;
     }
-
-    .account {
-        height: auto; /* Cambiado a auto para mejor ajuste */
+    .account{
+        
+        height: 200px;
         flex-direction: column;
     }
-
-    #cuenta, #carrito {
+    #cuenta, #carrito{
         width: 150px;
     }
-
-    .responsive-nav {
+    .responsive-nav{
         display: flex;
         align-items: baseline;
     }
-
     header ul li {
         margin: 0 15px;
     }
-
     header ul {
         flex-direction: column;
     }
-
-    .account {
+    .account{
         padding: 0;
+    }
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        width: 250px;
+        margin-bottom: 20px;
+        text-align: center; 
+    }
+    .product img {
+        width: 250px; 
+        height: 250px; 
+        object-fit: cover; 
+        margin-bottom: 10px; 
     }
 
     .product p {
-        font-size: 14px; /* Asegurarse que el texto no quede pequeño */
+        margin-top: 10px; 
+        font-size: 16px; 
     }
 
     .categories {
         text-align: left;
     }
-
-    .mid {
-        flex-direction: column;
-        align-items: center; /* Alinear elementos al centro */
-        padding: 20px 0; /* Espacio entre las columnas */
+   
+    .search-bar input {
+        width: 100%;
+        font-size: 14px;
     }
 
-    .midcolumn {
-        margin-bottom: 20px; /* Espacio entre columnas en móvil */
-        width: 90%; /* Mejorar el ancho en móvil */
+    .mid{
+        display: none;
+    }
+   
+    .catalog {
+        flex-direction: column;
+    }
+
+    .contador {
+        justify-content: space-between;
+        width: 100%;
+        margin: 10px 0;
     }
 
     footer {
         flex-direction: column;
         padding: 20px 10px;
-        align-items: center; /* Centrar contenido del footer */
     }
 
     .pago, .contacto, .logofooter {
@@ -514,43 +546,57 @@ h3, p{
         text-align: center;
         margin-bottom: 15px;
     }
-
+    
     h3, p {
         font-size: 14px;
     }
 
     .logofooter {
+        display: none;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .contador {
         display: none;
     }
 }
 
 @media (max-width: 768px) {
+    
     .nav {
         flex-direction: column;
         justify-content: center;
         padding: 10px;
+        
     }
-
+    .mid{
+        display: none;
+    }
     header ul {
-        flex-direction: row;
+        flex-direction: column;
     }
-
     .product img, .tamano-productos, .item img, .item1 {
         width: 250px;
         height: 250px;
         object-fit: cover;
     }
-
     #lenoirhead {
         width: 200px;
         height: 80px;
         background-size: contain;
     }
 
+    .product {
+        flex: 1 1 48%; 
+        margin: 1%;
+    }
+
     footer {
         padding: 20px;
         flex-direction: column;
-        align-items: center; /* Alinear contenido del footer */
     }
 
     .pago, .contacto, .logofooter {
@@ -561,44 +607,51 @@ h3, p{
     h3, p {
         font-size: 14px;
     }
-
-    .logofooter {
+    .logofooter{
         display: none;
     }
-
-    .mid {
-        flex-direction: column;
-        align-items: center; /* Alinear elementos al centro */
+    
+    .product img {
+        width: 100%;
+        height: auto;
+        object-fit: contain; 
     }
-
-    .midcolumn {
-        width: 80%; /* Asegurarse de que las columnas ocupen más espacio */
+    .contador{
+        display: none;
     }
 }
-
 @media (max-width: 1000px) {
-    .nav {
+     .nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
     }
 
+    .mid{
+        display: none;
+    }
     .product img, .tamano-productos, .item img, .item1 {
         width: 250px;
         height: 250px;
         object-fit: cover;
     }
-
+   
     #lenoirhead {
-        width: 200px;
-        height: 80px;
-        background-size: contain;
+       display: none;
+    }
+
+    .search-bar{
+        display: none;
+    }
+    .product {
+        flex: 1 1 48%; 
+        margin: 1%;
     }
 
     footer {
         padding: 20px;
         flex-direction: column;
-        align-items: center; /* Alinear contenido del footer */
     }
 
     .pago, .contacto, .logofooter {
@@ -606,25 +659,52 @@ h3, p{
         margin-bottom: 10px;
     }
 
-    .mid {
-        flex-direction: column;
-        align-items: center; /* Alinear elementos al centro */
+    h3, p {
+        font-size: 14px;
     }
-
-    .midcolumn {
-        width: 90%; /* Asegurarse de que las columnas ocupen más espacio */
-        margin-bottom: 20px; /* Espacio entre columnas en dispositivos más grandes */
+    .logofooter{
+        display: none;
     }
-
-    .logofooter {
+    
+    .product img {
+        width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .contador{
         display: none;
     }
 }
-
 @media (min-width: 1001px) {
     .nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .catalog {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .search-bar {
+        display: flex; 
+        width: 100%; 
+        margin-bottom: 15px; 
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .search-bar{
+        display: none;
+    }
+
+    
+    .product img {
+        width: 100%;
+        height: auto;
+        object-fit: contain; 
     }
 }

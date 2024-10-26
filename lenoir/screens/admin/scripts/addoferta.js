@@ -1,4 +1,4 @@
-const formoferta = document.getElementById("addoferta")
+const formoferta = document.getElementById("addOferta")
 const parrafo = document.getElementById("warnings")
 const oferta = document.getElementById("oferta")
 const precio = document.getElementById("precio")

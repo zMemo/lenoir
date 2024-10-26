@@ -245,7 +245,7 @@ header ul li a:hover{
 }
 
 .cart-sidebar.open {
-    right: 0; /* Se despliega desde el costado derecho */
+    right: 0; 
 }
 
 /* Cabecera del carrito */
