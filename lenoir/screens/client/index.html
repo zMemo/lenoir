@@ -13,21 +13,30 @@
         <div class="upper-header">
             <sub>💳incluimos vasos y hielos en todos los combos - envío gratis a todo CABA 🚚</sub> 
         </div>
-        <nav class="nav">
-            <a href="/lenoir/screens/client/index.html" id="lenoirhead"></a>
-            <ul class="categories">
-                <li><a class="underlined" href="vino.html">BEBIDAS</a>
+        <div class="nav">
+            <a href="/lenoir/screens/index.html" id="lenoirhead"></a>
+            <ul>
+                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/vinos.html">BEBIDAS</a>
                     <ul class="submenu">
-                        <li><a href="vino.html">Vinos</a></li>
-                        <li><a href="cerveza.html">Cervezas</a></li>
-                        <li><a href="destilado.html">Destilados y Aperitivos</a></li>
-                        <li><a href="bebidasinalcohol.html">Bebidas sin Alcohol</a></li>
-                        <li><a href="extra.html">Extras</a></li>
+                        <li><a href="vino.html">vinos</a></li>
+                        <li><a href="cerveza.html">cervezas</a></li>
+                        <li><a href="destilado.html">destilados/aperitivos</a></li>
+                        <li><a href="bebidasinalcohol.html">sin alcohol</a></li>
+                        <li><a href="extra.html">extras</a></li>
                     </ul>
                 </li>
-                <li><a class="underlined" href="ofertas.html">OFERTAS</a></li>
-                <li><a class="underlined" href="myorder.html">PEDIDOS</a></li>
-                <li><a class="underlined" href="contact.html">CONTACTO</a></li>
+                <li class="hideOnMobile"><a class="underlined" href="ofertas.html">OFERTAS</a></li>
+                <li class="hideOnMobile"><a class="underlined" href="myorder.html">MI PEDIDO</a></li>
+                <li class="hideOnMobile"><a class="underlined" href="contact.html">CONTACTO</a></li>
+                <li onclick=showSidebar()><a class="menu" id="menu"></a></li>
+            </ul>
+            <a href="/lenoir/screens/index.html" class="lenoirhead"></a>
+            <ul class="categories-sidebar">
+                <li class="sideunder" onclick=hideSidebar()><a class="crossmenu"></a></li>
+                <li><a class="sideunder" href="/lenoir/screens/bebidas.html">BEBIDAS</a></li>
+                <li><a class="sideunder" href="ofertas.html">OFERTAS</a></li>
+                <li><a class="sideunder" href="myorder.html">MI PEDIDO</a></li>
+                <li><a class="sideunder" href="contact.html">CONTACTO</a></li>
             </ul>
             <div class="account">
                 <div>
@@ -69,15 +78,13 @@
                                 <p>Precio: $15.00</p>                              
                             </div>
                             <div class="cartinfo">
-                            <button class="remove-item">Eliminar</button>
-                            <div class="contador">
-                                <button id="decrementar">-</button>
-                                <p id="contador">0</p>
-                                <button id="incrementar">+</button>
+                                <button class="remove-item">Eliminar</button>
+                                <div class="contador">
+                                    <button id="decrementar">-</button>
+                                    <p id="contador">0</p>
+                                    <button id="incrementar">+</button>
+                                </div>
                             </div>
-                            
-                           
-                        </div>
                         </div>
                     </div>
                     <div class="cart-footer">
@@ -86,7 +93,6 @@
                     </div>
                 </div>
             </div>
-        </nav>
     </header>
 <div class="carousel">
     <div class="carousel-inner">
@@ -105,7 +111,7 @@
 </div>
 
 </style>
-
+        <!-- mid 
         <div class="mid" >
             <div class="midcolumn">
                 <div class="midcircle" id="moto"></div>
@@ -130,34 +136,18 @@
                     <span>Nos encargamos de cubrir todas las necesidades para que no falte nada en tu fiesta</span>
                 </div>
             </div>
-        </div>
+        </div>-->
         
         </div>
     </div>
 </div>
 
 
-    <footer>
-        <div class="pago">
-            <div class="medios_pago">
-                <h3>Medios de pago</h3>
-            </div>
-            <div class="pagos"></div>
-            <p class="copyright">Copyright Lenoir bebidas - 2024. Todos los derechos reservados.</p>     
-        </div>
-        <div class="contacto">
-            <h3>Contacto</h3>
-            <div class="social-media">
-                <a href="https://www.tiktok.com/@lenoir.bebidas" class="social-icon"></a>
-                <a href="https://www.instagram.com/lenoir.bebidas/" class="social-icon"></a>
-            </div> 
-        </div>  
-        <div class="logofooter">
 
-        </div>
-    </footer>
+
+
     <script src="/lenoir/screens/client/scripts/carrito.js"></script>
     <script src="/lenoir/screens/client/scripts/carrousel.js"></script>
-
+    <script src="/lenoir/screens/client/scripts/header.js"></script>
 </body>
 </html>

@@ -30,11 +30,32 @@ a{
     text-decoration: none;
 }
 @media (min-width: 1450px) {
+    .upper-header{
+        text-transform: uppercase;
+    }
+    .nav {
+        padding: 0 20px;
+    }
     .account{
         margin-left: auto;
+        padding-right: 20px;
+    }
+    .menu{
+        display: none;
+    }
+    #carrito {
+        width: 3rem;
+        height: 3rem;
+    }
+    #cuenta {
+        width: 3rem;
+        height: 3rem;
     }
 }
 @media (max-width: 1450px) {
+    .nav{
+        padding: 0px;
+    }
     .hideOnMobile{
         display: none;
     }
@@ -54,50 +75,50 @@ a{
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: all ease 0.3s;
     }
-    .menu{
-        background-image: url("/lenoir/screens/img/menu.svg");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 30px;
-        height: 30px;
-        transition: all ease 0.4s;
-        padding-right: 80px;
+    #menu{
+        width: 2rem;
+        height: 2rem;
     }
-    .nav{
-        justify-content: space-between;
+    #carrito {
+        width: 2rem;
+        height: 2rem;
+    }
+    #cuenta {
+        width: 2rem;
+        height: 2rem;
     }
 }
 
 
 @media (max-width: 500px) {
-    .lenoirhead{
-        background-image: url("/lenoir/screens/img/logonegro.png");
-        background-size: contain; 
-        background-repeat: no-repeat;
-        width: 200px; 
-        height: 100%; 
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    a{
-        font-size: 30%;
-    }
     .nav {
-        height: 80px;
+        padding-right:10px;
     }
-    .account a {
-        width: 30px;
-        height: 30px;
+    .upper-header{
+        font-size: 10px;
+    }
+    .lenoirhead{
+        width: 200px; 
+        height: 80%; 
+        transition: all ease 0.3s;
+    }
+    .cuenta{
+        width: 15px;
+        height: 15px;
+    }
+    .carrito{
+        width: 15px;
+        height: 15px;
     }
     #lenoirhead {
         width: 200px;
     }
+    header ul .submenu li {
+        width: 20%;
+    }
 }
-
 
 
 /*   LO DEL ARRIBA DE HEADER */
@@ -112,7 +133,6 @@ a{
     background-color: darkgray;
     margin: 0;
     text-align: center;
-    text-transform: uppercase;
 }
 
 .head{
@@ -163,19 +183,6 @@ h1 {
     max-width: 1200px;
 }
 
-.item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.item img, .item1 {
-    width: 200px;
-    height: 200px;
-    background-color: black; 
-    margin-bottom: 10px;
-    object-fit: cover;
-}
 button {
     background-color: black;
     color: white;
@@ -189,6 +196,7 @@ button {
 button:hover {
     background-color: #444;
 }
+
 header ul li a:hover{
     color: #ff8a00;
 }
@@ -212,7 +220,6 @@ header ul li a:hover{
     }
     header ul .submenu li{
     margin: 0;
-    width: 100%;
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -225,13 +232,6 @@ header ul li a:hover{
     text-align: center; 
     white-space: nowrap; 
     }
-    
-    .hero_sec{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    }
 
 .nav {
     display: flex;
@@ -239,7 +239,6 @@ header ul li a:hover{
     width: 100%;
     height: 100px;
     position: relative;
-    padding: 0 20px;
 }
 #lenoirhead {
     background-image: url("/lenoir/screens/img/logonegro.png");
@@ -259,19 +258,26 @@ header ul li a:hover{
 .account {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding-right: 40px;
+    gap: 15px;  
 }
 
-.account a {
+.account a{
     width: 40px;
     height: 40px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
+.menu{
+    background-image: url("/lenoir/screens/img/menu.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all ease 0.4s;
+    margin-left: 10px;
+}
 
-#cuenta {
+#cuenta{
     background-image: url("/lenoir/screens/img/cuenta.svg");
     transition: all ease 0.4s;
 }
@@ -296,8 +302,8 @@ header ul li a:hover{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
+    width: 2rem;
+    height: 2rem;
     transition: all ease 0.4s;
 }
 .crossmenu:hover{
@@ -335,3 +341,6 @@ header ul li a:hover{
     text-align: center;
     margin: 0;
 }
+/* +++++++++++++++++++ */
+/* hasta aca es header */
+/* +++++++++++++++++++ */
