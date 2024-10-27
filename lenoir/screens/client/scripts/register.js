@@ -14,32 +14,33 @@ formregister.addEventListener("submit", e=>{
     parrafo.innerHTML = ""
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
     if(nombre.value.length <1){
-        warnings += "el nombre no es valido <br>"
+        warnings += "El nombre no es valido. <br>"
         entrar = true
     }
     if(user.value.length <6){
-        warnings += "el usuario no es valido <br>"
+        warnings += "El usuario no es valido. <br>"
         entrar = true
     }
     if(numero.value.length<9){
-        warnings += "el numero no es valido <br>"
+        warnings += "El numero no es valido.<br>"
         entrar = true
     }
     if(!regexEmail.test(email.value)){
-        warnings += "el email no es valido <br>"
+        warnings += "El email no es valido.<br>"
         entrar = true
     }
     if(registerpassword.value.length <8){
-        warnings += "tiene que tener 8 caracteres <br>"
+        warnings += "Tiene que tener 8 caracteres. <br>"
         entrar = true
     }
     if(registerpassword.value != repeatpassword.value){
-        warnings += "la contraseñas son distintas <br>"
+        warnings += "La contraseñas son distintas. <br>"
         entrar = true
     }
     if(entrar){
         parrafo.innerHTML = warnings
     }else{
-        parrafo.innerHTML = "registrandote..."
+        parrafo.innerHTML = "Registrandote..."
+        modal_container.classList.add('show');
     }
 })

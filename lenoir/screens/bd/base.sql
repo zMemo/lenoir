@@ -1,3 +1,4 @@
+-- Active: 1729972723424@@127.0.0.1@3307@base
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
@@ -22,10 +23,11 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+CREATE DATABASE IF NOT EXISTS `base` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 --
 -- Estructura de tabla para la tabla `entrega`
 --
+USE `base`;
 
 CREATE TABLE `entrega` (
   `id` int(11) NOT NULL,
@@ -248,3 +250,8 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO usuario
+    (id, nombre, apellido, email, dni, direccion)
+    VALUES 
+    (NULL,'Carlitos', 'Bala, 'ehhapepe@gmail.com', 6669999, 'La salada 1234')

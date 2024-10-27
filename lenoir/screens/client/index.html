@@ -16,13 +16,13 @@
         <nav class="nav">
             <a href="/lenoir/screens/client/index.html" id="lenoirhead"></a>
             <ul class="categories">
-                <li><a class="underlined" href="/lenoir/screens/vinos.html">BEBIDAS</a>
+                <li><a class="underlined" href="vino.html">BEBIDAS</a>
                     <ul class="submenu">
-                        <li><a href="vino.html">vinos</a></li>
-                        <li><a href="cerveza.html">cervezas</a></li>
-                        <li><a href="destilado.html">destilados y aperitivos</a></li>
-                        <li><a href="bebidasinalcohol.html">bebidas sin alcohol</a></li>
-                        <li><a href="extra.html">extras</a></li>
+                        <li><a href="vino.html">Vinos</a></li>
+                        <li><a href="cerveza.html">Cervezas</a></li>
+                        <li><a href="destilado.html">Destilados y Aperitivos</a></li>
+                        <li><a href="bebidasinalcohol.html">Bebidas sin Alcohol</a></li>
+                        <li><a href="extra.html">Extras</a></li>
                     </ul>
                 </li>
                 <li><a class="underlined" href="ofertas.html">OFERTAS</a></li>
@@ -46,17 +46,66 @@
                         <h2>Tu Carrito</h2>
                         <span id="close-cart" class="close-btn">&times;</span>
                     </div>
-                    <div class="cart-items"></div>
+                    <div class="cart-items">
+                        <div class="cart-item">
+                            <img src="/lenoir/screens/img/bianchimalbec.jpg" alt="Producto 1">
+                            <div class="item-details">
+                                <h4>Vino Bianchi</h4>
+                                <p>Precio: $10.00</p>
+                            </div>
+                            <div class="cartinfo">
+                            <button class="remove-item">Eliminar</button>
+                            <div class="contador">
+                                <button id="decrementar">-</button>
+                                <p id="contador">0</p>
+                                <button id="incrementar">+</button>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="cart-item">
+                            <img src="/lenoir/screens/img/bianchimalbec.jpg" alt="Producto 2">
+                            <div class="item-details">
+                                <h4>Vino Bianchi</h4>
+                                <p>Precio: $15.00</p>                              
+                            </div>
+                            <div class="cartinfo">
+                            <button class="remove-item">Eliminar</button>
+                            <div class="contador">
+                                <button id="decrementar">-</button>
+                                <p id="contador">0</p>
+                                <button id="incrementar">+</button>
+                            </div>
+                            
+                           
+                        </div>
+                        </div>
+                    </div>
                     <div class="cart-footer">
-                        <p>Total: $0.00</p>
+                        <p class="totalprice">Total: $0.00</p>
                         <button>Ir a Pagar</button>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-        <div id="carrousel"></div>
-        
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="carrouselimg1"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="carrouselimg2"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="carrouselimg3"></div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+</style>
+
         <div class="mid" >
             <div class="midcolumn">
                 <div class="midcircle" id="moto"></div>
@@ -108,5 +157,7 @@
         </div>
     </footer>
     <script src="/lenoir/screens/client/scripts/carrito.js"></script>
+    <script src="/lenoir/screens/client/scripts/carrousel.js"></script>
+
 </body>
 </html>

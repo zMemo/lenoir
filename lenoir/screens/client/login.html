@@ -13,10 +13,18 @@
     <form method="post" id="login">
         <input type="text" id="username" placeholder="Email">
         <input type="password" id="password" placeholder="Contraseña"> 
-        <input type="submit" class="btn"value="Iniciar sesion">
+        <input type="submit" id="open" class="btn"value="Iniciar sesion">
+        <div id="modal_container" class="modal-container">
+            <div class="modal">
+              <h1>Ingresando...</h1>
+              
+            </div>
+          </div>
         <p class="warnings" id="warnings"></p>
         <a href="/lenoir/screens/client/register.html">CREAR CUENTA NUEVA</a>
     </form>
+  
+
     <script src="/lenoir/screens/client/scripts/login.js"></script>
 </body>
 </html>

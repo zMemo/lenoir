@@ -254,6 +254,7 @@ header ul li a:hover{
     box-shadow: -5px 0 5px rgba(0,0,0,0.2);
     transition: right 0.3s ease;
     z-index: 1000;
+    color: black;
 }
 
 .cart-sidebar.open {
@@ -283,18 +284,48 @@ header ul li a:hover{
 
 
 .cart-items {
+    display: flex;
     padding: 15px;
     height: calc(100% - 120px);
     overflow-y: auto;
+    color: black;
+    flex-direction: column;
 }
 
+.contador {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 5px 40px 0 0;
+    color: black;
+}
+.cartinfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    color: black;
+}
+.remove-item {
+    margin-left: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.item-details{
+    text-align: center;
+    color: black;
+}
 .cart-footer {
     padding: 15px;
     background-color: black;
     color: white;
     text-align: center;
 }
-
+.totalprice{
+    border-bottom: 1px dashed grey;
+}
 .cart-footer button {
     background-color: black;
     border: none;
@@ -304,17 +335,77 @@ header ul li a:hover{
     width: 100%;
 }
 
-#carrousel{
-    display: flex;
-    background-image: url("/lenoir/screens/img/fondo.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.carousel {
+    position: relative;
     width: 100%;
-    height: 800px;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
     border-bottom: 1px solid white;
 }
 
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
+.carousel-item {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+.carousel-item {
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+.carrouselimg1{
+    background-image: url("/lenoir/screens/img/fondo.jpeg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+.carrouselimg2{
+    background-image: url("/lenoir/screens/img/home2.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+.carrouselimg3{
+    background-image: url("/lenoir/screens/img/home3.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
 /* comienza la parte media, son cualidades de lenoir */
 .mid{
     display: flex;
@@ -447,7 +538,7 @@ footer{
 .social-icon:nth-of-type(2){
     background-image: url("/lenoir/screens/img/ig.svg");
 }
-h3, p{
+h3{
     color: white;   
 }
 .copyright {
