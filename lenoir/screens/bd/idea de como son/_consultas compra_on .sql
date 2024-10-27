@@ -1,3 +1,4 @@
+-- SQLBook: Code
 SHOW DATABASES;
 --DROP DATABASE compra_on;
 
