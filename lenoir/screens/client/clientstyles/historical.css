@@ -5,16 +5,7 @@
     text-align: center;
     text-align: justify;
 }
-.home{
-    background-image: url("img/home.svg");
-    margin: 20px;
-    color: #333333;
-    width: 50px;
-    height: 50px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    align-items: center;
-}
+
 
 .history-container {
     display: flex;
@@ -47,4 +38,26 @@ th, td {
 
 tbody tr:hover {
     background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .box{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .tabla{
+        margin: 20px;
+    }
+    table th, table td{
+        font-size: 12px;
+        padding: 7px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    table th, table td {
+        font-size: 9px;
+        padding: 5px;
+    }
 }
