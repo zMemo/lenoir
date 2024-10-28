@@ -83,7 +83,7 @@ inner join producto ON listacompra.id_producto=producto.id;
 
 --CONSULTAS LENOIR
 
---CONSULTAS TABLA "TAL"
+--CONSULTAS TABLA "USUARIO"
 
 --CONSULTAS TABLA "TAL"
 
