@@ -25,7 +25,12 @@ img, video {
     max-width: 100%;
     height: auto;
 }
-
+footer * {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
 a{
     text-decoration: none;
 }
@@ -51,6 +56,14 @@ a{
     #cuenta {
         width: 3rem;
         height: 3rem;
+    }
+    .midcircle{
+        height: 5rem;
+        width: 5rem;
+        margin: 1rem;
+    }
+    .midcolumn{
+        display: flex;
     }
 }
 
@@ -93,6 +106,46 @@ a{
     #cuenta {
         width: 2rem;
         height: 2rem;
+    }    
+    footer *{
+        font-size: 100%;
+    }
+    footer h3{
+        font-size: 1rem;
+    }
+    footer li{
+        font-size: 70%;
+    }
+    footer .logofooter{
+        width: 100px;
+        height: 100px;
+    }
+    footer .mediodepago{
+        width: 65%;
+        height: 100px;
+    }
+    footer .copyright{
+        font-size: 50%;
+    }
+    .midcolumn{
+        flex-direction: row;
+        text-align: center;
+    }
+    .mid h6{
+        font-size: 12px;
+    }
+    .mid span{
+        font-size: 10px;
+    }
+    .midcircle{
+        background-color: white;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 80px;
+        margin: 10px auto 0 auto;
+    }
+    .midbox{
+        margin: 10px auto;
     }
 }
 
@@ -122,6 +175,47 @@ a{
     }
     header ul .submenu li {
         width: 20%;
+    }
+    footer *{
+        font-size: 60%;
+    }
+    footer h3{
+        font-size: 13px;
+    }
+    footer li{
+        font-size: 12px;
+    }
+    footer .logofooter{
+        width: 100%;
+        height: 100px;
+    }
+    footer .mediodepago{
+        width: 100%;
+        height: 100%;
+    }
+    footer .copyright{
+        font-size: 50%;
+    }
+    footer .row.primary {
+        display: grid;
+        grid-template-columns: 2.5fr 2fr 1fr;
+        align-items: stretch;
+    }
+    .mid h6{
+        font-size: 8px;
+    }
+    .mid span{
+        display: none;
+    }
+    .midcircle{
+        background-color: white;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 80px;
+        margin: 10px auto 0 auto;
+    }
+    .midbox{
+        margin: 10px 25%
     }
 }
 
@@ -290,6 +384,9 @@ header ul li a:hover{
     background-image: url("/lenoir/screens/img/accounthover.svg");
 }
 
+#cuentalog{
+    background-image: url("/lenoir/screens/img/logged.svg");
+}
 #carrito {
     background-image: url("/lenoir/screens/img/carrito.svg");
     transition: all ease 0.4s;
@@ -349,6 +446,11 @@ header ul li a:hover{
 /* +++++++++++++++++++ */
 /* hasta aca es header */
 /* +++++++++++++++++++ */
+
+
+
+
+/* carrito productos */
 .cart-sidebar {
     position: fixed;
     right: -100%;
@@ -384,9 +486,6 @@ header ul li a:hover{
     cursor: pointer;
     font-size: 24px;
 }
-
-
-
 
 .cart-items {
     display: flex;
@@ -439,7 +538,9 @@ header ul li a:hover{
     cursor: pointer;
     width: 100%;
 }
+/* carrito productos */
 
+/* carousel */
 .carousel {
     position: relative;
     width: 100%;
@@ -511,29 +612,26 @@ header ul li a:hover{
     width: 100%;
     height: 100vh;
 }
-/* comienza la parte media, son cualidades de lenoir */
+/* carousel */
+
+
+/* mid cualidades */
 .mid{
     display: flex;
     background-color:   #afb2b7;
-    height: 220px;
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
 }
 .midcolumn{
-    display: flex;
     background-color: #afb2b7;
     width: 33%;
-    height: 100%;
     align-items: center;
     justify-content: center;
 }
 .midcircle{
     background-color: white;
-    height: 5rem;
-    width: 5rem;
     border-radius: 80px;
-    margin: 1rem;
 }
 .midbox{
     width: 50%;
@@ -560,446 +658,98 @@ header ul li a:hover{
 }
 h6{
     font-size: 20px;
-    margin: 10px 5px;
 }
 span{
     font-size: 14px;
 }
-/*  termina parte media cualidades de lenoir */
+/* mid cualidades */
 
 
 
 
-
+/*  footer */
 footer {
-    background-color: #000000;
-    color: black;
+    background-color: #121315;
+    color: #a7a7a7;
     font-size: 16px;
     width: 100%;
-  }
-  footer * {
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-  }
-  .row {
-    padding: 1em 1em;
-  }
-  .row.primary {
+}
+.row {
+    padding: 0em 0em 1em 1em;
+}
+.row.primary {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-columns: 2.5fr 2fr 1.5fr;
     align-items: stretch;
-    background-color: black;
-    
-    
-  }
-  .column {
+}
+.column {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 2em;
-    min-height: 15em;
-    
-  }
-  h3 {
+    padding: 0 1.5em;
+}
+h3{
     width: 100%;
     text-align: left;
     color: white;
     font-size: 1.4em;
     white-space: nowrap;
-  }
-  footer ul{
+    margin-top: 10px;
+}
+footer ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0;
-  }
-  footer li:not(:first-child) {
+}
+footer li {
     margin-top: 0.8em;
-  }
-  footer ul li a {
+}
+footer ul li a {
     color: #a7a7a7;
     text-decoration: none;
-  }
-  footer ul li a:hover {
+}
+footer ul li a:hover {
     color: #2a8ded;
-  }
-  .about p {
+}
+.about p{
     text-align: justify;
     line-height: 2;
     margin: 0;
-  }
-  
-  .social i {
+}
+.column.social {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2.4em;
+    flex-direction: row;
+    margin-top: 0.5em;
+}
+.social i{
     color: #bac6d9;
-  }
- 
-  .copyright {
-    padding: 0.3em 1em;
+}
+.copyright{
+    padding: 0.1em 0.6em 0.1em 0.1em;
     background-color: #25262e;
-  }
-  .footer-menu{
-    float: left;
-      margin-top: 10px;
-  }
-  
-  .footer-menu a{
-    color: #cfd2d6;
-    padding: 6px;
-  
-    text-decoration: none;
-  }
-  .footer-menu a:hover{
-    color: #27bcda;
-  }
-  .copyright p {
+}
+.copyright p{
     font-size: 0.9em;
     text-align: right;
-    color: darkgrey;
-  }
-  footer h3{
-    margin-bottom: 10px;
-  }
+}
 .mediodepago {
     background-image: url("/lenoir/screens/img/pago.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 100%; 
-    height: 200px;
-    background-position: center; 
+    background-position: center;
+    width: 70%; 
+    height: 100%; 
 }
-  @media screen and (max-width: 850px) {
-    .row.primary {
-      grid-template-columns: 1fr;
-    }
-  
-  }
-@media (max-width: 750px) {
-    footer {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 25px;
-    }
-
-    .pago, .contacto, .logofooter {
-        width: 40%;
-        margin-bottom: 10px;
-    }
-
-    .social-media {
-        margin-top: 5px;
-    }
-
-    .social-icon {
-        height: 40px;
-        width: 40px;
-    }
-
-    .medios_pago, .contacto {
-        font-size: 12px;
-    }
+.logofooter{
+    background-image: url("/lenoir/screens/img/logo-footer.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center ;
+    height: 100%; 
 }
-@media (max-width: 1001px) {
-    footer {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 20px 30px;
-    }
-
-    .pago, .contacto, .logofooter {
-        width: auto;
-    }
-
-    .medios_pago, .contacto {
-        font-size: 12px;
-    }
-    .mediodepago {
-        height: 100px;
-        width: 600px;
-    }
-    .social-icon {
-        height: 50px;
-        width: 50px;
-    }
-}
-@media (max-width: 480px) {
-    footer {
-      padding: 10px 15px;
-    }
-
-    .row.primary {
-      grid-template-columns: 1fr;
-    }
-
-    .column {
-      padding: 0 1em;
-    }
-
-    h3 {
-      font-size: 1.2em;
-    }
-
-    ul li a {
-      font-size: 0.9em;
-    }
-
-    .social-icon {
-      height: 30px;
-      width: 30px;
-    }
-
-    .mediodepago {
-      height: 80px;
-      width: 100%;
-    }
-  }
-@media (max-width: 576px) {
-    .nav {
-    
-        width: auto;
-        height: auto;
-        flex-direction: column;
-  }
-
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .account{
-        
-        height: 200px;
-        flex-direction: column;
-    }
-    #cuenta, #carrito{
-        width: 150px;
-    }
-    .responsive-nav{
-        display: flex;
-        align-items: baseline;
-    }
-    header ul li {
-        margin: 0 15px;
-    }
-    header ul {
-        flex-direction: column;
-    }
-    .account{
-        padding: 0;
-    }
-    .product {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        width: 250px;
-        margin-bottom: 20px;
-        text-align: center; 
-    }
-    .product img {
-        width: 250px; 
-        height: 250px; 
-        object-fit: cover; 
-        margin-bottom: 10px; 
-    }
-
-    .product p {
-        margin-top: 10px; 
-        font-size: 16px; 
-    }
-
-    .categories {
-        text-align: left;
-    }
-   
-    .search-bar input {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    .mid{
-        display: none;
-    }
-   
-    .catalog {
-        flex-direction: column;
-    }
-
-    .contador {
-        justify-content: space-between;
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    footer {
-        flex-direction: column;
-        padding: 20px 10px;
-    }
-
-    .pago, .contacto, .logofooter {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-    
-    h3, p {
-        font-size: 14px;
-    }
-
-    .logofooter {
-        display: none;
-    }
-
-    .search-bar {
-        display: none;
-    }
-
-    .contador {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    
-    .nav {
-        flex-direction: column;
-        justify-content: center;
-        padding: 10px;
-        
-    }
-    .mid{
-        display: none;
-    }
-    header ul {
-        flex-direction: column;
-    }
-    .product img, .tamano-productos, .item img, .item1 {
-        width: 250px;
-        height: 250px;
-        object-fit: cover;
-    }
-    #lenoirhead {
-        width: 200px;
-        height: 80px;
-        background-size: contain;
-    }
-
-    .product {
-        flex: 1 1 48%; 
-        margin: 1%;
-    }
-
-    footer {
-        padding: 20px;
-        flex-direction: column;
-    }
-
-    .pago, .contacto, .logofooter {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    h3, p {
-        font-size: 14px;
-    }
-    .logofooter{
-        display: none;
-    }
-    
-    .product img {
-        width: 100%;
-        height: auto;
-        object-fit: contain; 
-    }
-    .contador{
-        display: none;
-    }
-}
-@media (max-width: 1000px) {
-     .nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        
-    }
-
-    .mid{
-        display: none;
-    }
-    .product img, .tamano-productos, .item img, .item1 {
-        width: 250px;
-        height: 250px;
-        object-fit: cover;
-    }
-   
-    #lenoirhead {
-       display: none;
-    }
-
-    .search-bar{
-        display: none;
-    }
-    .product {
-        flex: 1 1 48%; 
-        margin: 1%;
-    }
-
-    footer {
-        padding: 20px;
-        flex-direction: column;
-    }
-
-    .pago, .contacto, .logofooter {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    h3, p {
-        font-size: 14px;
-    }
-    .logofooter{
-        display: none;
-    }
-    
-    .product img {
-        width: 100%;
-        height: auto;
-        object-fit: contain; 
-    }
-    .contador{
-        display: none;
-    }
-}
-@media (min-width: 1001px) {
-    .nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .catalog {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .search-bar {
-        display: flex; 
-        width: 100%; 
-        margin-bottom: 15px; 
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-    }
-
-    .search-bar{
-        display: none;
-    }
-
-    
-    .product img {
-        width: 100%;
-        height: auto;
-        object-fit: contain; 
-    }
-}
+/*  footer */

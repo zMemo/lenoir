@@ -114,16 +114,15 @@ h1 {
     margin-bottom: 10px;
     object-fit: cover;
 }
+
 button {
-    width: 100%; 
-    padding: 15px 0; 
-    font-size: 16px; 
-    color: white; 
-    background-color: black; 
-    border: none; 
-    text-align: center;
-    line-height: normal; 
-    box-sizing: border-box; 
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
 button:hover {
@@ -221,6 +220,10 @@ header ul li a:hover{
 
 #carrito {
     background-image: url("/lenoir/screens/img/carrito.svg");
+    transition: all ease 0.4s;
+}
+#carrito:hover {
+    background-image: url("/lenoir/screens/img/carthover.svg");
 }
 /* header */
 
@@ -242,7 +245,96 @@ header ul li a:hover{
 
 
 
+.cart-sidebar {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -5px 0 5px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    color: black;
+}
 
+.cart-sidebar.open {
+    right: 0; 
+}
+
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: black;
+    color: white;
+}
+
+.cart-header h2 {
+    margin: 0;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+
+
+.cart-items {
+    display: flex;
+    padding: 15px;
+    height: calc(100% - 120px);
+    overflow-y: auto;
+    color: black;
+    flex-direction: column;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 5px 40px 0 0;
+    color: black;
+}
+.cartinfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    color: black;
+}
+.remove-item {
+    margin-left: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.item-details{
+    text-align: center;
+    color: black;
+}
+.cart-footer {
+    padding: 15px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.totalprice{
+    border-bottom: 1px dashed grey;
+}
+.cart-footer button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
 
 
 
@@ -425,6 +517,8 @@ main {
     width: 70%;
     height: 250px;
 }
+
+
 
 
 footer{

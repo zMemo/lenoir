@@ -3,6 +3,9 @@ const formcontacto = document.getElementById("contacto")
 const emailcontacto = document.getElementById("emailcontacto")
 const asunto = document.getElementById("asunto")
 const desc = document.getElementById("descripcion")
+const modal_container = document.getElementById("modal_container");
+const open = document.getElementById("open"); 
+const close = document.getElementById("close");
 
 
 formcontacto.addEventListener("submit", e=>{
@@ -27,5 +30,11 @@ formcontacto.addEventListener("submit", e=>{
         parrafo.innerHTML = warnings;
     }else{
         parrafo.innerHTML = "Mensaje enviado..."
+        modal_container.classList.add('show');
+        setTimeout(() => {
+            modal_container.classList.remove('show');
+            window.location.href = "/lenoir/screens/client/index.html";
+        }, 2000); 
     }
 })
+

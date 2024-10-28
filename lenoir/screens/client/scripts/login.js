@@ -13,19 +13,21 @@ formlogin.addEventListener("submit", e => {
     parrafo.innerHTML = "";
     
     if (username.value.length < 6) {
-        warnings += "El nombre no es válido.<br>.";
+        warnings += "El nombre no es válido.<br>";
         entrar = true;
     }
     if (password.value.length < 8) {
         warnings += "La contraseña no es válida.<br>";
         entrar = true;
     }
-    
     if (entrar) {
         parrafo.innerHTML = warnings;
     } else {
         parrafo.innerHTML = "Ingresando...";
-        modal_container.classList.add('show'); 
+        modal_container.classList.add('show');
+        setTimeout(() => {
+            modal_container.classList.remove('show');
+            window.location.href = "/lenoir/screens/client/indexlogged.html";
+        }, 2000); 
     }
 });
-

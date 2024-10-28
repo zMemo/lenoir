@@ -42,5 +42,9 @@ formregister.addEventListener("submit", e=>{
     }else{
         parrafo.innerHTML = "Registrandote..."
         modal_container.classList.add('show');
+        setTimeout(() => {
+            modal_container.classList.remove('show');
+            window.location.href = "/lenoir/screens/client/index.html";
+        }, 2000); 
     }
 })
