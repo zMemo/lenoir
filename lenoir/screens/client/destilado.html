@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Destilados y Aperitivos</title>
     <link rel="stylesheet" href="/lenoir/screens/client/clientstyles/productos.css">
+    <link rel="stylesheet" href="/lenoir/screens/client/clientstyles/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,75 +15,84 @@
         </div>
         <div class="nav">
             <a href="/lenoir/screens/client/index.html" id="lenoirhead"></a>
-            <ul class="categories">
-                <li><a class="underlined" href="/lenoir/screens/vinos.html">BEBIDAS</a>
+            <ul>
+                <li class="hideOnMobile"><a class="underlined" href="vino.html">BEBIDAS</a>
                     <ul class="submenu">
-                        <li><a href="vino.html">Vinos</a></li>
-                        <li><a href="cerveza.html">Cervezas</a></li>
-                        <li><a href="destilado.html">Destilados y aperitivos</a></li>
-                        <li><a href="bebidasinalcohol.html">Bebidas sin alcohol</a></li>
-                        <li><a href="extra.html">Extras</a></li>
+                        <li><a href="/lenoir/screens/client/vino.html">vinos</a></li>
+                        <li><a href="/lenoir/screens/client/cerveza.html">cervezas</a></li>
+                        <li><a href="/lenoir/screens/client/destilado.html">destilados/aperitivos</a></li>
+                        <li><a href="/lenoir/screens/client/sinalcohol.html">sin alcohol</a></li>
+                        <li><a href="/lenoir/screens/client/extra.html">extras</a></li>
                     </ul>
                 </li>
-                <li><a class="underlined" href="ofertas.html">OFERTAS</a></li>
-                <li><a class="underlined" href="myorder.html">PEDIDOS</a></li>
-                <li><a class="underlined" href="contact.html">CONTACTO</a></li>
+                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/ofertas.html">OFERTAS</a></li>
+                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/myorder.html">MI PEDIDO</a></li>
+                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/contact.html">CONTACTO</a></li>
+                <li onclick=showSidebar()><a class="menu" id="menu"></a></li>
+            </ul>
+            <a href="/lenoir/screens/client/index.html" class="lenoirhead"></a>
+            <ul class="categories-sidebar">
+                <li class="sideunder" onclick=hideSidebar()><a class="crossmenu"></a></li>
+                <li><a class="sideunder" href="/lenoir/screens/client/bebidas.html">BEBIDAS</a></li>
+                <li><a class="sideunder" href="/lenoir/screens/client/ofertas.html">OFERTAS</a></li>
+                <li><a class="sideunder" href="/lenoir/screens/client/login.html">MI PEDIDO</a></li>
+                <li><a class="sideunder" href="//lenoir/screens/client/contact.html">CONTACTO</a></li>
             </ul>
             <div class="account">
-                <a id="search" href=""></a>
                 <div>
                     <ul class="categories">
                         <li><a id="cuenta" href="#"></a>
                             <ul class="submenu">
-                                <li><a href="/lenoir/screens/login.html">Login</a></li>
-                                <li><a href="/lenoir/screens/register.html">Register</a></li>
+                                <li><a href="/lenoir/screens/client/login.html">Login</a></li>
+                                <li><a href="/lenoir/screens/client/register.html">Register</a></li>
                             </ul>
-                        </div>
-                        <a id="carrito" href=""></a>
-                        <div id="cart-sidebar" class="cart-sidebar">
-                            <div class="cart-header">
-                                <h2>Tu Carrito</h2>
-                                <span id="close-cart" class="close-btn">&times;</span>
+                        </li>
+                    </ul>
+                </div>
+                <a id="carrito" href=""></a>
+                <div id="cart-sidebar" class="cart-sidebar">
+                    <div class="cart-header">
+                        <h2>Tu Carrito</h2>
+                        <span id="close-cart" class="close-btn">&times;</span>
+                    </div>
+                    <div class="cart-items">
+                        <div class="cart-item">
+                            <img src="/lenoir/screens/img/bianchimalbec.jpg" alt="Producto 1">
+                            <div class="item-details">
+                                <h4>Vino Bianchi</h4>
+                                <p>Precio: $10.00</p>
                             </div>
-                            <div class="cart-items">
-                                <div class="cart-item">
-                                    <img src="/lenoir/screens/img/bianchimalbec.jpg" alt="Producto 1">
-                                    <div class="item-details">
-                                        <h4>Vino Bianchi</h4>
-                                        <p>Precio: $10.00</p>
-                                    </div>
-                                    <div class="cartinfo">
-                                    <button class="remove-item">Eliminar</button>
-                                    <div class="contador">
-                                        <button id="decrementar">-</button>
-                                        <p id="contador">0</p>
-                                        <button id="incrementar">+</button>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="cart-item">
-                                    <img src="/lenoir/screens/img/bianchimalbec.jpg" alt="Producto 2">
-                                    <div class="item-details">
-                                        <h4>Vino Bianchi</h4>
-                                        <p>Precio: $15.00</p>                              
-                                    </div>
-                                    <div class="cartinfo">
-                                        <button class="remove-item">Eliminar</button>
-                                        <div class="contador">
-                                            <button id="decrementar">-</button>
-                                            <p id="contador">0</p>
-                                            <button id="incrementar">+</button>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="cartinfo">
+                            <button class="remove-item">Eliminar</button>
+                            <div class="contador">
+                                <button id="decrementar">-</button>
+                                <span id="cantidad">0</span>
+                                <button id="incrementar">+</button>
                             </div>
-                            <div class="cart-footer">
-                                <p class="totalprice">Total: $0.00</p>
-                                <button>Ir a Pagar</button>
                             </div>
                         </div>
+                        <div class="cart-item">
+                            <img src="/lenoir/screens/img/bianchimalbec.jpg" alt="Producto 2">
+                            <div class="item-details">
+                                <h4>Vino Bianchi</h4>
+                                <p>Precio: $15.00</p>                              
+                            </div>
+                            <div class="cartinfo">
+                                <button class="remove-item">Eliminar</button>
+                                <div class="contador">
+                                    <button id="decrementar">-</button>
+                                    <span id="cantidad">0</span>
+                                    <button id="incrementar">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-footer">
+                        <p class="totalprice">Total: $0.00</p>
+                        <button>Ir a Pagar</button>
+                    </div>
+                </div>
             </div>
-        </div>
     </header>
     <div class="content-products">
         <main>
@@ -101,7 +111,7 @@
                         </div>
                     </div>
                     <button >Agregar al carrito</button>
-                    <a href="/lenoir/screens/client/descProduct.html" ><button>Ver detalles</button></a>
+                    <a href="/lenoir/screens/client/descproduct.html" ><button>Ver detalles</button></a>
                 </div>
                 <div class="product">
                     <div class="tamano-productos">
@@ -116,11 +126,8 @@
                                 <button id="incrementar">+</button>
                             </div>
                         </div>
-                         
-                        <button >Agregar al carrito</button>
-                        <a href="/lenoir/screens/client/descProduct.html" ><button>Ver detalles</button></a>
-                        
-                    
+                    <button >Agregar al carrito</button>
+                    <a href="/lenoir/screens/client/descproduct.html" ><button>Ver detalles</button></a>
                 </div>
                 <div class="product">
                     <div class="tamano-productos">
@@ -137,7 +144,7 @@
                         </div>
                     </div>
                     <button >Agregar al carrito</button>
-                    <a href="/lenoir/screens/client/descProduct.html" ><button>Ver detalles</button></a>
+                    <a href="/lenoir/screens/client/descproduct.html" ><button>Ver detalles</button></a>
                 </div>
                 <div class="product">
                     <div class="tamano-productos">
@@ -154,7 +161,7 @@
                         </div>
                     </div>
                     <button >Agregar al carrito</button>
-                    <a href="/lenoir/screens/client/descProduct.html" ><button>Ver detalles</button></a>
+                    <a href="/lenoir/screens/client/descproduct.html" ><button>Ver detalles</button></a>
                 </div>
             </div>
         </main>
@@ -162,24 +169,30 @@
 
   
     <footer>
-        <div class="pago">
-            <div class="medios_pago">
+        <div class="row primary">
+            <div class="column about">
                 <h3>Medios de pago</h3>
+                <div class="mediodepago"></div>
             </div>
-            <div class="pagos"></div>
-            <p class="copyright">Copyright Lenoir bebidas - 2024. Todos los derechos reservados.</p>     
+            <div class="column links">
+                <h3>Redes sociales</h3>
+                <ul>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Tiktok</a></li>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="column logo">
+                <div class="logofooter"></div>
+            </div>
         </div>
-        <div class="contacto">
-            <h3>Contacto</h3>
-            <div class="social-media">
-                <a href="https://www.tiktok.com/@lenoir.bebidas" class="social-icon"></a>
-                <a href="https://www.instagram.com/lenoir.bebidas/" class="social-icon"></a>
-            </div> 
-        </div>  
-        <div class="logofooter">
-
+        <div class="row copyright">
+            <p>Copyright &copy; 2021 Lenoir Bebidas</p>
         </div>
     </footer>
+    <script src="/lenoir/screens/client/scripts/header.js"></script>
     <script src="/lenoir/screens/client/scripts/carrito.js"></script>
+    <script src="/lenoir/screens/client/scripts/contador2.js"></script>
 </body>
 </html>
