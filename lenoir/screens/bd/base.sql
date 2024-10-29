@@ -1,4 +1,4 @@
--- Active: 1730171711715@@127.0.0.1@3307@base
+-- Active: 1730171543758@@127.0.0.1@3306@base
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
@@ -57,9 +57,6 @@ CREATE TABLE `oferta` (
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
-ALTER TABLE `entrega`
-    ADD CONSTRAINT `fk_pedido_detalle` FOREIGN KEY (`id_pedido_producto`) REFERENCES `pedido_detalle` (`id`),
-    ADD CONSTRAINT `fk_pedido_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `pedido_oferta` (`id`)
 -- --------------------------------------------------------
 
 --
@@ -72,16 +69,12 @@ CREATE TABLE `oferta_detalle` (
     `id_producto` int(11) NOT NULL,
     `cantidad` int(11) NOT NULL,
     `precio_total` float NOT NULL,
-    PRIMARY KEY (`id`),
-    KEY `fk_oferta` (`id_oferta`),
-    KEY `fk_producto_oferta` (`id_producto`),
-    CONSTRAINT `fk_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `oferta` (`id`),
-    CONSTRAINT `fk_producto_oferta` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`),
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
-ALTER TABLE `entrega`
-    ADD CONSTRAINT `fk_pedido_detalle` FOREIGN KEY (`id_pedido_producto`) REFERENCES `pedido_detalle` (`id`),
-    ADD CONSTRAINT `fk_pedido_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `pedido_oferta` (`id`)
+ALTER TABLE oferta_detalle
+    ADD CONSTRAINT fk_oferta FOREIGN KEY (id_oferta) REFERENCES oferta (id),
+    ADD CONSTRAINT fk_producto_oferta FOREIGN KEY (id_producto) REFERENCES productos (id)
 -- --------------------------------------------------------
 
 --
@@ -94,14 +87,12 @@ CREATE TABLE `pedido_detalle` (
     `id_producto` int(11) NOT NULL,
     `cantidad` int(11) NOT NULL,
     `precio` float NOT NULL,
-    PRIMARY KEY (`id`),
-    CONSTRAINT `fk_producto_detalle` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`),
-    CONSTRAINT `fk_producto_pedido` FOREIGN KEY (`id_pedido`) REFERENCES `pedido_producto` (`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
-ALTER TABLE `entrega`
-    ADD CONSTRAINT `fk_pedido_detalle` FOREIGN KEY (`id_pedido_producto`) REFERENCES `pedido_detalle` (`id`),
-    ADD CONSTRAINT `fk_pedido_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `pedido_oferta` (`id`)
+ALTER TABLE pedido_detalle
+    ADD CONSTRAINT fk_producto_detalle FOREIGN KEY (id_producto) REFERENCES productos (id),
+    ADD CONSTRAINT fk_producto_pedido FOREIGN KEY (id_pedido) REFERENCES pedido_producto (id)
 -- --------------------------------------------------------
 
 --
@@ -114,16 +105,12 @@ CREATE TABLE `pedido_oferta` (
     `id_oferta` int(11) NOT NULL,
     `fechahora_pedido` date NOT NULL,
     `precio_total` float NOT NULL,
-    PRIMARY KEY (`id`),
-    KEY `fk_usuario_pedido` (`id_usuario`),
-    KEY `fk_oferta_pedido` (`id_oferta`),
-    CONSTRAINT `fk_oferta_pedido` FOREIGN KEY (`id_oferta`) REFERENCES `oferta` (`id`),
-    CONSTRAINT `fk_usuario_pedido` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
-ALTER TABLE `entrega`
-    ADD CONSTRAINT `fk_pedido_detalle` FOREIGN KEY (`id_pedido_producto`) REFERENCES `pedido_detalle` (`id`),
-    ADD CONSTRAINT `fk_pedido_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `pedido_oferta` (`id`)
+ALTER TABLE pedido_oferta
+    ADD CONSTRAINT fk_oferta_pedido FOREIGN KEY (id_oferta) REFERENCES oferta (id),
+    ADD CONSTRAINT fk_usuario_pedido FOREIGN KEY (id_usuario) REFERENCES usuario (id)
 -- --------------------------------------------------------
 
 --
@@ -135,14 +122,12 @@ CREATE TABLE `pedido_producto` (
     `id_usuario` int(11) NOT NULL,
     `fechahora_pedido` date NOT NULL,
     `preciototal` float NOT NULL,
-    PRIMARY KEY (`id`),
-    KEY `fk_usuario` (`id_usuario`),
-    CONSTRAINT `fk_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
-ALTER TABLE `entrega`
-    ADD CONSTRAINT `fk_pedido_detalle` FOREIGN KEY (`id_pedido_producto`) REFERENCES `pedido_detalle` (`id`),
-    ADD CONSTRAINT `fk_pedido_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `pedido_oferta` (`id`)
+ALTER TABLE pedido_producto
+    ADD CONSTRAINT fk_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id)
+    
 
 -- --------------------------------------------------------
 
@@ -153,18 +138,15 @@ ALTER TABLE `entrega`
 CREATE TABLE `productos` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `producto` varchar(30) NOT NULL,
-    `categoria` ('Vinos','Cervezas','Sin alcohol','Destilados','Extras') ENUM NOT NULL,
+    `categoria` enum('Vinos','Cervezas','Sin alcohol','Destilados','Extras') NOT NULL,
     `marca` varchar(30) NOT NULL,
     `stock` int(11) NOT NULL,
     `precio` int(11) NOT NULL,
-    `descprod` text(300) NOT NULL,
+    `descprod` text NOT NULL,
     `img` varchar(300) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
-ALTER TABLE `entrega`
-    ADD CONSTRAINT `fk_pedido_detalle` FOREIGN KEY (`id_pedido_producto`) REFERENCES `pedido_detalle` (`id`),
-    ADD CONSTRAINT `fk_pedido_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `pedido_oferta` (`id`)
 -----------------------------------------------------------
 
 --
@@ -185,10 +167,6 @@ CREATE TABLE `usuario` (
     UNIQUE KEY `mail` (`mail`),
     UNIQUE KEY `usuario` (`usuario`)
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
-
-ALTER TABLE `entrega`
-    ADD CONSTRAINT `fk_pedido_detalle` FOREIGN KEY (`id_pedido_producto`) REFERENCES `pedido_detalle` (`id`),
-    ADD CONSTRAINT `fk_pedido_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `pedido_oferta` (`id`)
 
 
 COMMIT;
