@@ -620,3 +620,14 @@ table th{
     color: rgb(255, 255, 255);
     padding-top: 20px;
 }
+.editbtn{
+    background-image: url("/lenoir/screens/img/editbtn.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+.borrarbtn{
+    background-image: url("/lenoir/screens/img/quitbtn.svg");
+    background-size: contain; 
+    background-repeat: no-repeat;
+}

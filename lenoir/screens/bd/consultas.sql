@@ -1,9 +1,7 @@
 -- SQLBook: Code
 show DATABASES;
 
-use base;
-
-show tables;
+use base;show tables;
 
 
 DESCRIBE usuario;
@@ -16,7 +14,6 @@ insert into usuario
 VALUES
 (NULL, "ignacio", "Uliczki", "djtacoza2@gmail.com", "hh1234");
 
-
 insert into usuario
 (id, nombre, apellido, email, pass)
 VALUES
@@ -28,8 +25,6 @@ update usuario SET nombre= "Ignaciown"
 where id=5;
 
 delete from usuario where id=4;
-
-
 
 
 
@@ -69,9 +64,9 @@ update producto SET stock= stock-2 where id=1;
 
 --superconsulta
 SELECT usuario.nombre AS nombre,
-    producto.nombre AS producto,
-    compra.fecha AS Fecha,
-    listacompra.cantidad AS Cantidad
+producto.nombre AS producto,
+compra.fecha AS Fecha,
+listacompra.cantidad AS Cantidad
 from usuario
 inner join compra on usuario.id=compra.id_usuario
 inner join listacompra on compra.id=listacompra.id_compra
@@ -96,5 +91,4 @@ inner join producto ON listacompra.id_producto=producto.id;
 --CONSULTAS TABLA "TAL"
 
 --CONSULTAS TABLA "TAL"
-
 --CONSULTAS TABLA "TAL"

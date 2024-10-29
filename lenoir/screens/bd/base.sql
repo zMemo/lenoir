@@ -122,7 +122,7 @@ CREATE TABLE `productos` (
   `img` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+-----------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `usuario`
@@ -250,8 +250,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-INSERT INTO usuario
-    (id, nombre, apellido, email, dni, direccion)
-    VALUES 
-    (NULL,'Carlitos', 'Bala, 'ehhapepe@gmail.com', 6669999, 'La salada 1234')

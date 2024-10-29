@@ -11,7 +11,6 @@ formlogin.addEventListener("submit", e => {
     let warnings = "";
     let entrar = false;
     parrafo.innerHTML = "";
-    
     if (username.value.length < 6) {
         warnings += "El nombre no es válido.<br>";
         entrar = true;

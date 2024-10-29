@@ -4,7 +4,7 @@
     margin: 50px auto;
     padding: 30px;
     background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(184, 28, 28, 0.1);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
@@ -63,7 +63,7 @@
     margin-bottom: 20px;
 }
 .add-to-cart-btn {
-    background-color: black;
+    background-color: rgb(187, 87, 87);
     color: #fff;
     padding: 15px 25px;
     border: none;
@@ -92,3 +92,5 @@
     margin-bottom: 15px;
     font-size: 16px;
 }
+
+
