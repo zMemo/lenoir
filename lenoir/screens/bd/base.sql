@@ -112,7 +112,7 @@ CREATE TABLE `pedido_producto` (
 --
 
 CREATE TABLE `productos` (
-  `idProducto` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `producto` varchar(30) NOT NULL,
   `categoria` enum('Vinos','Cervezas','Sin alcohol','Destilados','Extras') NOT NULL,
   `marca` varchar(30) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE `productos` (
 --
 
 CREATE TABLE `usuario` (
-  `idUsuario` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `usuario` varchar(30) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `apellido` varchar(45) NOT NULL,
