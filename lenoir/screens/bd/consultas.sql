@@ -18,10 +18,10 @@ select * from usuario;
 DESCRIBE usuario;
 
 insert into usuario
-(idUsuario, usuario, nombre, apellido, mail, pass, telefono, nacimiento, tipo_usuario)
+(id, usuario, nombre, apellido, mail, pass, telefono, nacimiento, tipo_usuario)
 VALUES
-(NULL, "fentatres", "juan", "fentanes", "fenta@gmail.com", "fenta1234", "1134562325", "1999-09-09", "Cliente"),
-(NULL, "fentatres", "juan", "fentanes", "fenta@gmail.com", "fenta1234", "1134562325", "1999-09-09", "Cliente");
+(NULL, "fentatres34", "juan", "fentanes", "fentagod@gmail.com", "fenta1234", "1134562325", "1999-09-09", "Cliente"),
+(NULL, "fentatres3", "juan", "fentanes", "fentanes@gmail.com", "fenta1234", "1134562325", "1999-09-09", "Cliente");
 
 update usuario SET nombre= "Ignaciown" where id=2;
 
@@ -88,10 +88,9 @@ insert into pedido_oferta
 (id, id_usuario, fechahora_pedido, precio_total, id_oferta)
 VALUES
 (NULL,"1", "1999-09-09", "1000", "1"),
-(NULL,"2", "1999-09-09", "2000","2"),;
+(NULL,"2", "1999-09-09", "2000","2");
 
 update pedido_oferta SET precio_total= "20000" where id=2;
-
 
 delete from pedido_oferta where id=1;
 
