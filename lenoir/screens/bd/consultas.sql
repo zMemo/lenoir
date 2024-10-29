@@ -36,12 +36,12 @@ SELECT * from productos;
 DESCRIBE productos;
 
 insert into productos
-(id, producto, categoria, marca, precio, stock, descripcion)
+(id, producto, categoria, marca, precio, imagen, stock, descripcion)
 VALUES
-(NULL, "Vino Bianchi", "Vinos", "Bianchi", "8000", "100", "x" )
-(NULL, "Cerveza Heineken", "Cervezas", "Heineken", "3000", "150", "x" )
-(NULL, "Fernet", "Destilados", "Branca", "15000", "50", "x" )
-(NULL, "Cerveza Corona", "Cervezas", "Corona", "3000", "150", "x" )
+(NULL, "Vino Bianchi", "Vinos", "Bianchi", "8000", "link", "100", "x" )
+(NULL, "Cerveza Heineken", "Cervezas", "Heineken", "3000", "link", "150", "x" )
+(NULL, "Fernet", "Destilados", "Branca", "15000", "link", "50", "x" )
+(NULL, "Cerveza Corona", "Cervezas", "Corona", "3000", "link", "150", "x" )
 
 
 update producto SET stock = stock-2 where id=1;
@@ -67,8 +67,18 @@ delete from oferta where id=1;
 
 SELECT * from oferta_detalle;
 
-DESCRIBE oferta;
+DESCRIBE oferta_detalle;
 
+insert into oferta_detalle
+(id, id_oferta, id_producto, cantidad, precio)
+VALUES
+(NULL,"1", "4", "1500", "1222"),
+(NULL,"2", "5", "2500","3332"),;
+
+update oferta_detalle SET precio= "20000" where id=2;
+
+
+delete from oferta_detallewhere id=1;
 --CONSULTAS TABLA "PEDIDO-OFERTA"
 SELECT * from pedido_oferta;
 
@@ -98,6 +108,8 @@ VALUES
 (NULL, "2", "18/09/24 14:08", "80000")
 (NULL, "1", "13/09/24 23:39", "56500")
 
+
+
 --CONSULTAS TABLA "PEDIDO-DETALLE"
 SELECT * from pedido_detalle;
 
@@ -113,6 +125,9 @@ update pedido_detalle SET precio= "20000" where id=2;
 
 
 delete from pedido_detalle where id=1;
+
+
+
 --CONSULTAS TABLA "ENTREGA"
 SELECT * from entrega;
 
@@ -123,12 +138,12 @@ insert into entrega
 VALUES
 (NULL,"1", "3", "1999-09-09", "cancelado"),
 (NULL,"2", "4", "1999-09-09","en proceso"),;
-update entrega SET estado= "20000" where id=2;
+update entrega SET estado= "entregado" where id=2;
 delete from entrega where id=1;
 
 
 
---superconsulta no la usamos ni la aplicamos aun
+--superconsulta (no la usamos ni la aplicamos aun)
 SELECT usuario.nombre AS nombre,
 producto.nombre AS producto,
 compra.fecha AS Fecha,

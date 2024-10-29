@@ -30,25 +30,35 @@ CREATE DATABASE IF NOT EXISTS `base` DEFAULT CHARACTER SET latin1 COLLATE latin1
 USE `base`;
 
 CREATE TABLE `entrega` (
-  `id` int(11) NOT NULL,
-  `id_pedido_producto` int(11) NOT NULL,
-  `id_oferta` int(11) NOT NULL,
-  `fechahora_entrega` date NOT NULL,
-  `estado` enum('Cancelado','En proceso','En camino','Entregado') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `id_pedido_producto` int(11) NOT NULL,
+    `id_oferta` int(11) NOT NULL,
+    `fechahora_entrega` date NOT NULL,
+    `estado` enum(
+        'Cancelado',
+        'En proceso',
+        'En camino',
+        'Entregado'
+    ) NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `fk_pedido_detalle` (`id_pedido_producto`),
+    KEY `fk_pedido_oferta` (`id_oferta`),
+    CONSTRAINT `fk_pedido_detalle` FOREIGN KEY (`id_pedido_producto`) REFERENCES `pedido_detalle` (`id`),
+    CONSTRAINT `fk_pedido_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `pedido_oferta` (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
 ----------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `oferta`
 --
-
 CREATE TABLE `oferta` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
-  `fechahora` date NOT NULL,
-  `estado` enum('Inactivo','Activo') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `nombre` varchar(30) NOT NULL,
+    `fechahora` date NOT NULL,
+    `estado` enum('Inactivo', 'Activo') NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
 -- --------------------------------------------------------
 
@@ -57,12 +67,17 @@ CREATE TABLE `oferta` (
 --
 
 CREATE TABLE `oferta_detalle` (
-  `id` int(11) NOT NULL,
-  `id_oferta` int(11) NOT NULL,
-  `id_producto` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL,
-  `precio_total` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `id_oferta` int(11) NOT NULL,
+    `id_producto` int(11) NOT NULL,
+    `cantidad` int(11) NOT NULL,
+    `precio_total` float NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `fk_oferta` (`id_oferta`),
+    KEY `fk_producto_oferta` (`id_producto`),
+    CONSTRAINT `fk_oferta` FOREIGN KEY (`id_oferta`) REFERENCES `oferta` (`id`),
+    CONSTRAINT `fk_producto_oferta` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
 -- --------------------------------------------------------
 
@@ -71,12 +86,17 @@ CREATE TABLE `oferta_detalle` (
 --
 
 CREATE TABLE `pedido_detalle` (
-  `id` int(11) NOT NULL,
-  `id_pedido` int(11) NOT NULL,
-  `id_producto` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL,
-  `precio` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `id_pedido` int(11) NOT NULL,
+    `id_producto` int(11) NOT NULL,
+    `cantidad` int(11) NOT NULL,
+    `precio` float NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `fk_producto_pedido` (`id_pedido`),
+    KEY `fk_producto_detalle` (`id_producto`),
+    CONSTRAINT `fk_producto_detalle` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`),
+    CONSTRAINT `fk_producto_pedido` FOREIGN KEY (`id_pedido`) REFERENCES `pedido_producto` (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
 -- --------------------------------------------------------
 
@@ -85,13 +105,17 @@ CREATE TABLE `pedido_detalle` (
 --
 
 CREATE TABLE `pedido_oferta` (
-  `id` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `fechahora_pedido` date NOT NULL,
-  `precio_total` float NOT NULL,
-  `id_oferta` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `id_usuario` int(11) NOT NULL,
+    `id_oferta` int(11) NOT NULL,
+    `fechahora_pedido` date NOT NULL,
+    `precio_total` float NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `fk_usuario_pedido` (`id_usuario`),
+    KEY `fk_oferta_pedido` (`id_oferta`),
+    CONSTRAINT `fk_oferta_pedido` FOREIGN KEY (`id_oferta`) REFERENCES `oferta` (`id`),
+    CONSTRAINT `fk_usuario_pedido` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 -- --------------------------------------------------------
 
 --
@@ -99,11 +123,14 @@ CREATE TABLE `pedido_oferta` (
 --
 
 CREATE TABLE `pedido_producto` (
-  `id` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `fechahora_pedido` date NOT NULL,
-  `preciototal` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `id_usuario` int(11) NOT NULL,
+    `fechahora_pedido` date NOT NULL,
+    `preciototal` float NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `fk_usuario` (`id_usuario`),
+    CONSTRAINT `fk_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
 -- --------------------------------------------------------
 
@@ -112,16 +139,22 @@ CREATE TABLE `pedido_producto` (
 --
 
 CREATE TABLE `productos` (
-  `id` int(11) NOT NULL,
-  `producto` varchar(30) NOT NULL,
-  `categoria` enum('Vinos','Cervezas','Sin alcohol','Destilados','Extras') NOT NULL,
-  `marca` varchar(30) NOT NULL,
-  `stock` int(11) NOT NULL,
-  `precio` int(11) NOT NULL,
-  `descprod` text NOT NULL,
-  `img` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `producto` varchar(30) NOT NULL,
+    `categoria` enum(
+        'Vinos',
+        'Cervezas',
+        'Sin alcohol',
+        'Destilados',
+        'Extras'
+    ) NOT NULL,
+    `marca` varchar(30) NOT NULL,
+    `stock` int(11) NOT NULL,
+    `precio` int(11) NOT NULL,
+    `descprod` text NOT NULL,
+    `img` varchar(300) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 -----------------------------------------------------------
 
 --
@@ -129,122 +162,20 @@ CREATE TABLE `productos` (
 --
 
 CREATE TABLE `usuario` (
-  `id` int(11) NOT NULL,
-  `usuario` varchar(30) NOT NULL,
-  `nombre` varchar(45) NOT NULL,
-  `apellido` varchar(45) NOT NULL,
-  `mail` varchar(45) NOT NULL,
-  `pass` int(30) NOT NULL,
-  `telefono` int(15) NOT NULL,
-  `nacimiento` date NOT NULL,
-  `tipo_usuario` enum('Cliente','Admin') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `usuario` varchar(30) NOT NULL,
+    `nombre` varchar(45) NOT NULL,
+    `apellido` varchar(45) NOT NULL,
+    `mail` varchar(45) NOT NULL,
+    `pass` int(30) NOT NULL,
+    `telefono` int(15) NOT NULL,
+    `nacimiento` date NOT NULL,
+    `tipo_usuario` enum('Cliente', 'Admin') NOT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `mail` (`mail`),
+    UNIQUE KEY `usuario` (`usuario`)
+) ENGINE = InnoDB AUTO_INCREMENT = 2 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `entrega`
---
-ALTER TABLE `entrega`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `oferta`
---
-ALTER TABLE `oferta`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `oferta_detalle`
---
-ALTER TABLE `oferta_detalle`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `pedido_detalle`
---
-ALTER TABLE `pedido_detalle`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `pedido_oferta`
---
-ALTER TABLE `pedido_oferta`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `pedido_producto`
---
-ALTER TABLE `pedido_producto`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD PRIMARY KEY (`idProducto`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`),
-  ADD UNIQUE KEY `mail` (`mail`),
-  ADD UNIQUE KEY `usuario` (`usuario`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `entrega`
---
-ALTER TABLE `entrega`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `oferta`
---
-ALTER TABLE `oferta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `oferta_detalle`
---
-ALTER TABLE `oferta_detalle`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `pedido_detalle`
---
-ALTER TABLE `pedido_detalle`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `pedido_oferta`
---
-ALTER TABLE `pedido_oferta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `pedido_producto`
---
-ALTER TABLE `pedido_producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `productos`
---
-ALTER TABLE `productos`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
