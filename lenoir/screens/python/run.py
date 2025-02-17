@@ -1,2 +1,5 @@
-def suma(a, b):
-    return 2 + 2
+from c.cfile import ejecutar
+
+def main():
+    ejecutar()
+main()
