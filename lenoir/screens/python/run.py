@@ -1,3 +1,4 @@
+import config
 from c.cfile import ejecutar
 
 def main():
