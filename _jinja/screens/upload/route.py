@@ -6,5 +6,5 @@ import os
 
 def route(app):
     @app.route('/')
-    def home():
-        return "Hello, World!"
+    def index():
+            return render_template('/client/index.html')
