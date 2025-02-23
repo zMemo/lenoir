@@ -10,9 +10,9 @@
 </head>
 <body>
     <a href="/lenoir/screens/client/index.html"><div class="logo"></div></a>
-    <form method="post" id="login">
-        <input type="text" id="username" placeholder="Usuario">
-        <input type="password" id="password" placeholder="Contraseña"> 
+    <form method="get" id="login" action"recibir_datos" >
+        <input type="text" id="username" name="username" placeholder="Usuario">
+        <input type="password" id="password" name="password" placeholder="Contraseña"> 
         <input type="submit" id="open" class="btn"value="Iniciar sesion">
         <div id="modal_container" class="modal-container">
             <div class="modal">
