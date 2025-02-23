@@ -9,11 +9,12 @@ def route(app):
     #CLIENT ROUTE
     @app.route('/')
     def index():
-            return render_template('/client/index.html')
+        return render_template('client/index.html')
             
     @app.route('/login')
     def login():
-            return render_template('/client/login.html')
+        return render_template('client/login.html')
+    
     @app.route('/recibir_datos', methods=['POST', 'GET'])
     def formrecibir():
         direquest={}
