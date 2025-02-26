@@ -38,12 +38,15 @@ DESCRIBE productos;
 insert into productos
 (id, producto, categoria, marca, stock, precio, descprod, img)
 VALUES
-(NULL, "Vino Bianchi", "Vinos", "Bianchi", "100", "8000", "x", "link" ),
-(NULL, "Cerveza Heineken", "Cervezas", "Heineken", "10", "5000", "x", "link"),
-(NULL, "Fernet", "Destilados", "Branca", "100", "8000", "x", "link" ),
-(NULL, "Cerveza Corona", "Cervezas", "Corona", "100", "8000", "x", "link");
+(NULL, "Vino Bianchi", "Vinos", "Bianchi", "100", "8000", "x", "/static/img/bianchimalbec.jpg" ),
+(NULL, "Cerveza Heineken", "Cervezas", "Heineken", "10", "5000", "x", "/static/img/bianchimalbec.jpg"),
+(NULL, "Fernet", "Destilados", "Branca", "100", "8000", "x", "/static/img/bianchimalbec.jpg" ),
+(NULL, "hielo", "Extras", "rolito", "100", "8000", "x", "/static/img/bianchimalbec.jpg"),
+(NULL, "Cocacola", "Sin alcohol", "Coca", "100", "8000", "x", "/static/img/bianchimalbec.jpg"),
+(NULL, "Cerveza Corona", "Cervezas", "Corona", "100", "8000", "x", "/static/img/bianchimalbec.jpg");
+update productos SET stock = stock-2 where id=1;
 
-update producto SET stock = stock-2 where id=1;
+delete from productos where id=20;
 
 --CONSULTAS TABLA "OFERTA"
 SELECT * from oferta;
@@ -119,7 +122,7 @@ VALUES
 update pedido_detalle SET precio= "20000" where id=2;
 
 
-delete from pedido_detalle where id=1;
+delete from pedido_detalle where id=2;
 
 
 

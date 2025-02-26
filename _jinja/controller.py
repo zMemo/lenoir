@@ -149,7 +149,7 @@ def obtenerTablaProducto(param):
     #consultar la
 
     datos=[]
-    datos=selectDB(BASE,"select * from producto;",title=True)
+    datos=selectDB(BASE,"select * from productos;",title=True)
     tu_titulos=datos[0]
     li_datos=datos[1:]
     di_datos={}
@@ -160,17 +160,15 @@ def obtenerTablaProducto(param):
 
     param["page-title"]="Productos"
     param["page-header"]= "Productos"        
-    param['table']={
-        "title_table":"Productos",
-        "description_table":"",
+    param['table']={"title_table":"Productos",
+                    "description_table":"",
+                    "colIni":1,                 # Sirve para mostrar desde col 0 (incluye id), desde 1 no lo incluye al id
+                                                # siempre color el id en la primer posición (la 0) de la lista
+                                                # poner a izquierda columnas que no quiere visualizar
+                    "titles":{"id":"tbl_row_tit","cols":tu_titulos},
+                    "data":li_datos,
+    }     
 
-        "colIni":1, # Sirve para mostrar desde col 0 (incluye id), desde 1 no lo incluye al id
-                    # siempre color el id en la primer posición (la 0) de la lista
-                    # poner a izquierda columnas que no quiere visualizar
-                    
-        "titles":{"id":"tbl_row_tit","cols":tu_titulos},
-        "data":li_datos,
-    }        
 
 def paginaNoEncontrada(name):
     ''' Info:
@@ -284,6 +282,7 @@ def ValidarFormularioRegistro(di):
     res= res and di.get('email')!=""
     res= res and di.get('password')!=""
     return res
+
 def registrarUsuario(param,request):
     ''' info:
         Realiza el registro de un usuario en el sistema, es decir crea un nuevo usuario
@@ -325,7 +324,6 @@ def editarUsuario_pagina(param):
         obtenerUsuarioXEmail(param,session.get('username'), 'edit_user')
         res= render_template('edit_user.html',param=param)
     return res  
-
 
 def actualizarDatosDeUsuarios(param,request):
     '''info:
@@ -372,7 +370,15 @@ def home_pagina(param):
     Retorna la pagina 'home' renderizada.
     '''
     obtenerMenuBottom(param)
-    return render_template('home.html',param=param)
+    return render_template('client/index.html',param=param)
+
+def header_pagina(param):
+    ''' Info:
+    prueba
+    '''
+    obtenerMenuBottom(param)
+    obtenerTablaProducto(param)
+    return render_template('client/header.html',param=param)
 
 def login_pagina(param):
     ''' Info:
@@ -390,6 +396,14 @@ def login_pagina(param):
 ##########################################################################
 # + + I N I C I O + +  OTRAS PAGINAS     + + + + + + + + + + + + + + + + +
 ##########################################################################
+
+
+def header(param):
+    ''' Info:
+    prueba
+    '''
+    obtenerMenuBottom(param)
+    return render_template('header.html',param=param)
 
 def pagina01(param):  
     ''' Info:
@@ -421,7 +435,6 @@ def pagina02(param):
         res= redirect('/') # redirigir al home o a la pagina del login
     return res 
 
-
 def acercaDe_pagina(param): 
     ''' Info:
         Carga la pagina about
@@ -430,36 +443,6 @@ def acercaDe_pagina(param):
     param['page-header']="ABOUT, Acceso SIN LOGEO"
     return render_template('home.html',param=param) 
 
-def obtenerTablaProducto(param):
-    '''info:
-        Obtiene la información completa de toda la tabla de producto desde la DB.
-        Carga el dict 'param' con el contenido de la tabla
-    '''
-    #consultar la
-
-    datos=[]
-    datos=selectDB(BASE,"select * from producto;",title=True)
-    tu_titulos=datos[0]
-    li_datos=datos[1:]
-    di_datos={}
-    for fila in datos[1:]:                    # armo dict don los datos para colocarlo en los parámetroa
-        di_datos["tbl_row_"+str(fila[0])]=fila
-
-
-
-    param["page-title"]="Productos"
-    param["page-header"]= "Productos"        
-    param['table']={
-        "title_table":"Productos",
-        "description_table":"",
-
-        "colIni":1, # Sirve para mostrar desde col 0 (incluye id), desde 1 no lo incluye al id
-                    # siempre color el id en la primer posición (la 0) de la lista
-                    # poner a izquierda columnas que no quiere visualizar
-                    
-        "titles":{"id":"tbl_row_tit","cols":tu_titulos},
-        "data":li_datos,
-    }        
 
 def paginaNoEncontrada(name):
     ''' Info:

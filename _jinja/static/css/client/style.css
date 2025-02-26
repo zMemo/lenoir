@@ -81,7 +81,7 @@ a{
         display: none;
     }
     .lenoirhead{
-        background-image: url("/lenoir/screens/img/logonegro.png");
+        background-image: url("/static/img/logonegro.png");
         background-size: contain; 
         background-repeat: no-repeat;
         width: 250px; 
@@ -340,7 +340,7 @@ header ul li a:hover{
     position: relative;
 }
 #lenoirhead {
-    background-image: url("/lenoir/screens/img/logonegro.png");
+    background-image: url("/static/img/logonegro.png");
     background-size: cover; 
     background-repeat: no-repeat;
     width: 250px; 
@@ -368,7 +368,7 @@ header ul li a:hover{
     background-repeat: no-repeat;
 }
 .menu{
-    background-image: url("/lenoir/screens/img/menu.svg");
+    background-image: url("/static/img/menu.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -377,30 +377,30 @@ header ul li a:hover{
 }
 
 #cuenta{
-    background-image: url("/lenoir/screens/img/cuenta.svg");
+    background-image: url("/static/img/cuenta.svg");
     transition: all ease 0.4s;
 }
 #cuenta:hover {
-    background-image: url("/lenoir/screens/img/accounthover.svg");
+    background-image: url("/static/img/accounthover.svg");
 }
 
 #cuentalog{
-    background-image: url("/lenoir/screens/img/logged.svg");
+    background-image: url("/static/img/logged.svg");
 }
 #carrito {
-    background-image: url("/lenoir/screens/img/carrito.svg");
+    background-image: url("/static/img/carrito.svg");
     transition: all ease 0.4s;
 }
 #carrito:hover {
-    background-image: url("/lenoir/screens/img/carthover.svg");
+    background-image: url("/static/img/carthover.svg");
 }
 
 .menu:hover{
-    background-image: url("/lenoir/screens/img/menuhover.svg");
+    background-image: url("/static/img/menuhover.svg");
 }
 
 .crossmenu{
-    background-image: url("/lenoir/screens/img/crossmenu.svg");
+    background-image: url("/static/img/crossmenu.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -409,7 +409,7 @@ header ul li a:hover{
     transition: all ease 0.4s;
 }
 .crossmenu:hover{
-    background-image: url("/lenoir/screens/img/crossmenuhover.svg");
+    background-image: url("/static/img/crossmenuhover.svg");
 }
 
 .categories-sidebar{
@@ -592,21 +592,21 @@ header ul li a:hover{
     right: 10px;
 }
 .carrouselimg1{
-    background-image: url("/lenoir/screens/img/fondo.jpeg");
+    background-image: url("/static/img/fondo.jpeg");
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 100vh;
 }
 .carrouselimg2{
-    background-image: url("/lenoir/screens/img/home2.jpg");
+    background-image: url("/static/img/home2.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 100vh;
 }
 .carrouselimg3{
-    background-image: url("/lenoir/screens/img/home3.jpg");
+    background-image: url("/static/img/home3.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -639,19 +639,19 @@ header ul li a:hover{
     }
 
 #moto{
-    background-image: url("/lenoir/screens/img/moto.svg");
+    background-image: url("/static/img/moto.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
 }
 #bank{
-    background-image: url("/lenoir/screens/img/bank.svg");
+    background-image: url("/static/img/bank.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
 }
 #event{
-    background-image: url("/lenoir/screens/img/event.svg");
+    background-image: url("/static/img/event.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -733,7 +733,7 @@ footer ul li a:hover {
     text-align: right;
 }
 .mediodepago {
-    background-image: url("/lenoir/screens/img/pago.svg");
+    background-image: url("/static/img/pago.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -741,7 +741,7 @@ footer ul li a:hover {
     height: 100%; 
 }
 .logofooter{
-    background-image: url("/lenoir/screens/img/logo-footer.svg");
+    background-image: url("/static/img/logo-footer.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

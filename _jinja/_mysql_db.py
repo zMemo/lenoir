@@ -14,7 +14,8 @@ def conectarBD(configDB=None):
                     host=configDB.get("host"),
                     user=configDB.get("user"),
                     password=configDB.get("pass"),
-                    database=configDB.get("dbname")
+                    database=configDB.get("dbname"),
+                    port=configDB.get("port")
                     )
         except mysql.connector.Error as e:
             print("ERROR ->",e)        
@@ -153,7 +154,8 @@ COMPRA_ON={ "host":"localhost",
 BASE={ "host":"localhost",
         "user":"root",
         "pass":"",
-        "dbname":"base"}
+        "dbname":"base",
+        "port":"3307"}
 
 # ----------------- PRUEBA DE LA CONEXION A LA BD Y UNA CONSULTA ------------------------------
 def prueba():

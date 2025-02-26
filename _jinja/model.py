@@ -31,13 +31,13 @@ def crearUsuario(di):
     return resul_insert==1
 
 def obtenerUsuarioXEmail(param,email,clave='usuario'):
-    '''### Información:
-       Obtiene todos los campos de la tabla usuario a partir de la clave 'email'.
-       Carga la información obtenida de la BD en el dict 'param'
-       Recibe 'param' in diccionario
-       Recibe 'email' que es el mail si se utiliza como clave en la búsqueda
-       Recibe 'clave' que es a clave que se le colocará al dict 'param'
-       
+    ''' Información:
+        Obtiene todos los campos de la tabla usuario a partir de la clave 'email'.
+        Carga la información obtenida de la BD en el dict 'param'
+        Recibe 'param' in diccionario
+        Recibe 'email' que es el mail si se utiliza como clave en la búsqueda
+        Recibe 'clave' que es a clave que se le colocará al dict 'param'
+    
     '''
     sSql="""SELECT id, nombre,apellido,email,pass 
     FROM  usuario WHERE  email=%s;""" 
@@ -52,16 +52,16 @@ def obtenerUsuarioXEmail(param,email,clave='usuario'):
     param[clave]['password']=fila[0][4]
 
 def obtenerUsuarioXEmailPass(result,email,password):
-    '''### Información:
-       Obtiene todos los campos de la tabla usuario a partir de la clave 'email'
-         y del 'password'.
-       Carga la información obtenida de la BD en el dict 'result'
-       Recibe 'result' in diccionario donde se almacena la respuesta de la consulta
-       Recibe 'email' que es el mail si se utiliza como clave en la búsqueda
-       Recibe 'password' que se utiliza en la consulta. (Para validadar al usuario)
-       Retorna:
-        True cuando se obtiene un registro de u usuario a partir del 'email' y el 'pass.
-        False caso contrario.
+    ''' Información:
+        Obtiene todos los campos de la tabla usuario a partir de la clave 'email'
+        y del 'password'.
+        Carga la información obtenida de la BD en el dict 'result'
+        Recibe 'result' in diccionario donde se almacena la respuesta de la consulta
+        Recibe 'email' que es el mail si se utiliza como clave en la búsqueda
+        Recibe 'password' que se utiliza en la consulta. (Para validadar al usuario)
+        Retorna:
+            True cuando se obtiene un registro de u usuario a partir del 'email' y el 'pass.
+            False caso contrario.
     '''
     res=False
     sSql="""SELECT id, nombre,apellido,email,pass 

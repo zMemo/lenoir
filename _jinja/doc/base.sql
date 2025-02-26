@@ -32,15 +32,15 @@ USE `base`;
 CREATE TABLE `entrega` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `id_pedido_producto` int(11) NOT NULL,
-    `id_oferta` int(11) NOT NULL,
+    `id_pedido_oferta` int(11) NOT NULL,
     `fechahora_entrega` date NOT NULL,
     `estado` enum('Cancelado', 'En proceso', 'En camino', 'Entregado') NOT NULL,
     PRIMARY KEY (`id`)
 ); 
 
 ALTER TABLE entrega
-    ADD CONSTRAINT fk_pedido_detalle FOREIGN KEY (id_pedido_producto) REFERENCES pedido_detalle (id),
-    ADD CONSTRAINT fk_pedido_oferta FOREIGN KEY (id_oferta) REFERENCES pedido_oferta (id);
+    ADD CONSTRAINT fk_pedido_detalle FOREIGN KEY (id_pedido_producto) REFERENCES pedido_producto (id),
+    ADD CONSTRAINT fk_pedido_oferta FOREIGN KEY (id_pedido_oferta) REFERENCES pedido_oferta (id);
 
 
 
@@ -74,7 +74,7 @@ CREATE TABLE `oferta_detalle` (
 
 ALTER TABLE oferta_detalle
     ADD CONSTRAINT fk_oferta FOREIGN KEY (id_oferta) REFERENCES oferta (id),
-    ADD CONSTRAINT fk_producto_oferta FOREIGN KEY (id_producto) REFERENCES productos (id)
+    ADD CONSTRAINT fk_producto_oferta FOREIGN KEY (id_producto) REFERENCES productos (id);
 -- --------------------------------------------------------
 
 --
