@@ -169,6 +169,33 @@ def obtenerTablaProducto(param):
                     "data":li_datos,
     }     
 
+def obtenerTablaOferta(param):
+    '''info:
+        Obtiene la información completa de toda la tabla de oferta desde la DB.
+        Carga el dict 'param' con el contenido de la tabla
+    '''
+    #consultar la
+
+    datos=[]
+    datos=selectDB(BASE,"select * from productos;",title=True)
+    tu_titulos=datos[0]
+    li_datos=datos[1:]
+    di_datos={}
+    for fila in datos[1:]:                    # armo dict don los datos para colocarlo en los parámetroa
+        di_datos["tbl_row_"+str(fila[0])]=fila
+
+
+
+    param["page-title"]="Productos"
+    param["page-header"]= "Productos"        
+    param['table']={"title_table":"Productos",
+                    "description_table":"",
+                    "colIni":1,                 # Sirve para mostrar desde col 0 (incluye id), desde 1 no lo incluye al id
+                                                # siempre color el id en la primer posición (la 0) de la lista
+                                                # poner a izquierda columnas que no quiere visualizar
+                    "titles":{"id":"tbl_row_tit","cols":tu_titulos},
+                    "data":li_datos,
+    }     
 
 def paginaNoEncontrada(name):
     ''' Info:
@@ -193,12 +220,16 @@ def cargarSesion(dicUsuario):
     '''
 
     session['id_usuario'] = dicUsuario['id']
+    session['usuario']    = dicUsuario['usuario']
     session['nombre']     = dicUsuario['nombre']
-    session['apellido']   = dicUsuario['apellido']
-    session['username']   = dicUsuario['username'] # es el mail
-    session['imagen']     = ""
-    session['rol']        = ""
+    session['apellido']   = dicUsuario['apellido'] 
+    session['mail']       = dicUsuario['mail'] 
+    session['password']   = dicUsuario['password'] 
+    session['telefono']   = dicUsuario['telefono'] 
+    session['nacimiento'] = dicUsuario['nacimiento']
+    session['rol']        = dicUsuario['rol']
     session["time"]       = datetime.now()  
+    
 
 def createSession(request):
     '''info:
@@ -215,7 +246,7 @@ def createSession(request):
         getRequest(mirequest)
         # CONSULTA A LA BASE DE DATOS. Si usuario es valido => crea session
         dicUsuario={}
-        if obtenerUsuarioXEmailPass(dicUsuario,mirequest.get("username"),mirequest.get("password")):
+        if obtenerUsuarioXUserPass(dicUsuario,mirequest.get("username"),mirequest.get("password")):
             # Carga sesion (Usuario validado)
             cargarSesion(dicUsuario)
             sesionValida = True
@@ -229,7 +260,7 @@ def haySesion():
         session se encuentra la clave 'username'
         retorna True si hay sesión y False si no la hay.
     '''
-    return session.get("username")!=None
+    return session.get("usuario") != None
 
 def cerrarSesion():
     '''info:
@@ -239,6 +270,31 @@ def cerrarSesion():
         session.clear()
     except:
         pass
+
+def agregaralcarrito(param):
+    '''info:
+        Agrega un producto al carrito
+        recibe 'param' el diccionario de parámetros
+        retorna la pagina 'home' con el mensaje de exito o fracaso
+    '''
+    res=False
+    try:
+        if haySesion():
+            mirequest={}
+            getRequest(mirequest)
+            if mirequest.get("id_producto")!="":
+                res=agregarProductoAlCarrito(session.get("id_usuario"),mirequest.get("id_producto"))
+                if res:
+                    param['succes_msg']="Se ha agregado el producto al carrito"
+                else:
+                    param['error_msg']="Error: No se ha podido agregar el producto al carrito"
+            else:
+                param['error_msg']="Error: No se ha podido agregar el producto al carrito"
+        else:
+            param['error_msg']="Error: No hay sesion activa"
+    except ValueError:
+        param['error_msg']="Error: No se ha podido agregar el producto al carrito"
+    return home_pagina(param)
 
 ##########################################################################
 # - - F I N - - MANEJO DE  SESSION - - - - - - - - - - - - - - - - - - - -
@@ -261,11 +317,12 @@ def ingresoUsuarioValido(param,request):
             de error para ser mostrada en la pagina login.
     '''
     if createSession(request):
-        obtenerMenuBottom(param)  
-        res=render_template('home.html',param=param)
+        obtenerMenuBottom(param)
+        param['hay_sesion'] = haySesion()
+        res=render_template('client/index.html',param=param)
     else:
         param['error_msg_login']="Error: Usuario y/o password inválidos"
-        res= login_pagina(param)        
+        res = login_pagina(param)        
     return res  
 
 def registro_pagina(param):
@@ -273,7 +330,7 @@ def registro_pagina(param):
         Carga la pagina 'register'
     '''
     obtenerMenuBottom(param)       
-    return render_template('register.html',param=param)
+    return render_template('client/register.html',param=param)
 
 def ValidarFormularioRegistro(di):
     res=True
@@ -370,15 +427,35 @@ def home_pagina(param):
     Retorna la pagina 'home' renderizada.
     '''
     obtenerMenuBottom(param)
+    param['hay_sesion'] = haySesion() 
     return render_template('client/index.html',param=param)
 
-def header_pagina(param):
+def producto_pagina(param):
+    ''' Info:
+    prueba
+    '''
+    obtenerTablaProducto(param)
+    param['hay_sesion'] = haySesion() 
+    return render_template('client/producto.html',param=param)    
+
+def filtro_producto_pagina(param,categoria):
     ''' Info:
     prueba
     '''
     obtenerMenuBottom(param)
     obtenerTablaProducto(param)
-    return render_template('client/header.html',param=param)
+    param['hay_sesion'] = haySesion() 
+    return render_template('client/producto-filtro.html',param=param, categoria=categoria)
+
+def ofertas_pagina(param):
+    ''' Info:
+    prueba
+    '''
+    obtenerMenuBottom(param)
+    obtenerTablaOferta(param)
+    param['hay_sesion'] = haySesion() 
+    return render_template('client/ofertas.html',param=param)
+
 
 def login_pagina(param):
     ''' Info:
@@ -387,7 +464,7 @@ def login_pagina(param):
     Retorna la pagina 'login' renderizada.
     '''
     obtenerMenuBottom(param)
-    return render_template('login.html',param=param)
+    return render_template('/client/login.html',param=param)
 
 ##########################################################################
 # - - F I N - - PAGINA login, home y/o principal   - - - - - - - - - - - -
@@ -397,15 +474,16 @@ def login_pagina(param):
 # + + I N I C I O + +  OTRAS PAGINAS     + + + + + + + + + + + + + + + + +
 ##########################################################################
 
-
-def header(param):
+def contacto_pagina(param):
     ''' Info:
-    prueba
+        Carga la pagina contacto
     '''
     obtenerMenuBottom(param)
-    return render_template('header.html',param=param)
+    param['hay_sesion'] = haySesion() 
+    return render_template('client/contact.html',param=param)
 
-def pagina01(param):  
+
+def mipedido(param):  
     ''' Info:
         Carga la pagina 01
         Retorna la pagina 01, si hay sesion; sino retorna la home.
@@ -415,12 +493,12 @@ def pagina01(param):
         obtenerMenuBottom(param)  
         param['page-header']="Pagina 01, Acceso con logeo"
         obtenerTablaProducto(param)
-        res= render_template('pagina01.html',param=param)
+        param['hay_sesion'] = True
+        res= render_template('client/myorder.html',param=param)
     else:
         res= redirect('/')   # redirigir al home o a la pagina del login
     return res  
     
-
 def pagina02(param):  
     ''' Info:
         Carga la pagina 02
@@ -443,7 +521,6 @@ def acercaDe_pagina(param):
     param['page-header']="ABOUT, Acceso SIN LOGEO"
     return render_template('home.html',param=param) 
 
-
 def paginaNoEncontrada(name):
     ''' Info:
         Retorna una pagina generica indicando que la ruta 'name' no existe
@@ -457,3 +534,60 @@ def paginaNoEncontrada(name):
 ##########################################################################
 # - - F I N - -   OTRAS PAGINAS    - - - - - - - - - - - - - - - - - - - -
 ##########################################################################
+
+
+
+def pruebaadmin(param):
+    ''' Info:
+        Carga la pagina de prueba
+    '''
+    obtenerMenuBottom(param)
+    return render_template('admin/layoutAdmin.html',param=param)
+
+def paneladmin(param):
+    ''' Info:
+        Carga la pagina de panel
+    '''
+    obtenerMenuBottom(param)
+    return render_template('admin/panel.html',param=param)
+
+def productosadmin(param):
+    ''' Info:
+        Carga la pagina de productos
+    '''
+    obtenerMenuBottom(param)
+    return render_template('admin/addprod.html',param=param)
+
+def editproductosadmin(param):
+    ''' Info:
+        Carga la pagina de edicion de productos
+    '''
+    obtenerMenuBottom(param)
+    return render_template('admin/editprod.html',param=param)
+
+def historialadmin(param):
+    ''' Info:
+        Carga la pagina de historial
+    '''
+    obtenerMenuBottom(param)
+    return render_template('admin/historical.html',param=param)
+
+def stateorder(param):
+    ''' Info:
+        Carga la pagina de historial
+    '''
+    obtenerMenuBottom(param)
+    return render_template('admin/stateOrder.html',param=param)
+
+def addadmin(param):
+    ''' Info:
+        Carga la pagina de addadmin
+    '''
+    obtenerMenuBottom(param)
+    return render_template('admin/addAdmin.html',param=param)
+
+###def agregaprod(connDB,sQuery):
+res=none
+    
+    
+

@@ -1,172 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "client/layout.html" %}
+{% block head %}
     <title>Mi Pedido</title>
     <link rel="stylesheet" href="/lenoir/screens/client/clientstyles/pedidos.css">
-    <link rel="stylesheet" href="/lenoir/screens/client/clientstyles/style.css">
-</head>
-<body>
-    <header class="head">
-        <div class="upper-header">
-            <sub>💳incluimos vasos y hielos en todos los combos - envío gratis a todo CABA 🚚</sub> 
-        </div>
-        <div class="nav">
-            <a href="/lenoir/screens/client/index.html" id="lenoirhead"></a>
-            <ul>
-                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/bebidas.html">BEBIDAS</a>
-                    <ul class="submenu">
-                        <li><a href="/lenoir/screens/client/vino.html">vinos</a></li>
-                        <li><a href="/lenoir/screens/client/cerveza.html">cervezas</a></li>
-                        <li><a href="/lenoir/screens/client/destilado.html">destilados/aperitivos</a></li>
-                        <li><a href="/lenoir/screens/client/sinalcohol.html">sin alcohol</a></li>
-                        <li><a href="/lenoir/screens/client/extra.html">extras</a></li>
-                    </ul>
-                </li>
-                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/ofertas.html">OFERTAS</a></li>
-                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/myorder.html">MI PEDIDO</a></li>
-                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/contact.html">CONTACTO</a></li>
-                <li onclick=showSidebar()><a class="menu" id="menu"></a></li>
-            </ul>
-            <a href="/lenoir/screens/client/index.html" class="lenoirhead"></a>
-            <ul class="categories-sidebar">
-                <li class="sideunder" onclick=hideSidebar()><a class="crossmenu"></a></li>
-                <li><a class="sideunder" href="/lenoir/screens/client/bebidas.html">BEBIDAS</a></li>
-                <li><a class="sideunder" href="/lenoir/screens/client/ofertas.html">OFERTAS</a></li>
-                <li><a class="sideunder" href="/lenoir/screens/client/login.html">MI PEDIDO</a></li>
-                <li><a class="sideunder" href="/lenoir/screens/client/contact.html">CONTACTO</a></li>
-            </ul>
-            <div class="account">
-                <div>
-                    <ul class="categories">
-                        <li><a id="cuenta" href="#"></a>
-                            <ul class="submenu">
-                                <li><a href="/lenoir/screens/client/login.html">Login</a></li>
-                                <li><a href="/lenoir/screens/client/register.html">Register</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <a id="carrito" href=""></a>
-                <div id="cart-sidebar" class="cart-sidebar">
-                    <div class="cart-header">
-                        <h2>Tu Carrito</h2>
-                        <span id="close-cart" class="close-btn">&times;</span>
-                    </div>
-                    <div class="cart-items">
-                        <div class="cart-item">
-                            <img src="/lenoir/screens/img/bianchimalbec.jpg" alt="Producto 1">
-                            <div class="item-details">
-                                <h4>Vino Bianchi</h4>
-                                <p>Precio: $10.00</p>
-                            </div>
-                            <div class="cartinfo">
-                                <button class="remove-item">Eliminar</button>
-                                <div class="contador">
-                                    <button id="decrementar">-</button>
-                                    <span id="cantidad">0</span>
-                                    <button id="incrementar">+</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cart-item">
-                            <img src="/lenoir/screens/img/bianchimalbec.jpg" alt="Producto 2">
-                            <div class="item-details">
-                                <h4>Vino Bianchi</h4>
-                                <p>Precio: $15.00</p>                              
-                            </div>
-                            <div class="cartinfo">
-                                <button class="remove-item">Eliminar</button>
-                                <div class="contador">
-                                    <button id="decrementar">-</button>
-                                    <span id="cantidad">0</span>
-                                    <button id="incrementar">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-footer">
-                        <p class="totalprice">Total: $0.00</p>
-                        <button>Ir a Pagar</button>
-                    </div>
-                </div>
-            </div>
-    </header>
-    <div class="box">
-        <div class="table">
-            <table>
-                <thead>
-                    <label>codOrden: 3</label>
-                    <tr>
-                        <th>Productos</th>
-                        <th>Cantidad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            fernet
-                        </td>
-                        <td>
-                            1
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            vino
-                        </td>
-                        <td>
-                            2
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            hielo
-                        </td>
-                        <td>
-                            1
-                        </td>
-                    </tr>
-            </table>
-            <label>total: $200</label>
-            
-        </div>
-        <div class="estado"></div>
+{% endblock %}
+{% block content %}
+<div class="box">
+    <div class="table">
+        <table>
+            <thead>
+                <label>codOrden: 3</label>
+                <tr>
+                    <th>Productos</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        fernet
+                    </td>
+                    <td>
+                        1
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        vino
+                    </td>
+                    <td>
+                        2
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        hielo
+                    </td>
+                    <td>
+                        1
+                    </td>
+                </tr>
+        </table>
+        <label>total: $200</label>
+        
     </div>
-
-    <div class="volver">
-        <a href="/lenoir/screens/client/myorder.html">
-            <button>VOLVER</button>
-        </a>
-    </div>
-    
-    <footer>
-        <div class="row primary">
-            <div class="column about">
-                <h3>Medios de pago</h3>
-                <div class="mediodepago"></div>
-            </div>
-            <div class="column links">
-                <h3>Redes sociales</h3>
-                <ul>
-                    <li><a href="">Instagram</a></li>
-                    <li><a href="">Tiktok</a></li>
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="">Twitter</a></li>
-                </ul>
-            </div>
-            <div class="column logo">
-                <div class="logofooter"></div>
-            </div>
-        </div>
-        <div class="row copyright">
-            <p>Copyright &copy; 2021 Lenoir Bebidas</p>
-        </div>
-    </footer>
-    <script src="/lenoir/screens/client/scripts/carrito.js"></script>
-    <script src="/lenoir/screens/client/scripts/carrousel.js"></script>
-    <script src="/lenoir/screens/client/scripts/header.js"></script>
-    <script src="/lenoir/screens/client/scripts/contador2.js"></script>
-</body>
-</html>
+    <div class="estado"></div>
+</div>
+<div class="volver">
+    <a href="/lenoir/screens/client/myorder.html">
+        <button>VOLVER</button>
+    </a>
+</div>
+{% endblock %}

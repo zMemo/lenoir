@@ -1,0 +1,33 @@
+{% extends "client/layout.html" %}
+{% block head %}
+    <title>Catálogo de {{item}}</title>
+    <link rel="stylesheet" href="./static/css/client/productos.css">
+{% endblock %}
+<body>
+{% block content%}
+    <div class="content-products">
+        <main>
+            <div class="catalog">
+                {% for item in param["table"]["data"] %}
+                    <div class="product">
+                        <div class="tamano-productos">
+                            <div class="prod"><img src="../static/img/{{item[7]}}">
+                            </div>
+                        </div>
+                        <p>{{ item[1] }} </p>
+                        <div class="productos-info">
+                            <p class="valor">${{ item[5] }}</p>
+                        </div>
+                        <a href="/addtocart"><button>Agregar al carrito</button></a>
+                        <a href="/descripcionproduct"><button>Ver detalles</button></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="/static/js/client/contador2.js"></script>
+{% endblock %}
+</body>
+

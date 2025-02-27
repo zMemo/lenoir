@@ -1,3 +1,4 @@
+-- SQLBook: Code
 -- Active: 1740268021834@@127.0.0.1@3307@base
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
@@ -126,8 +127,7 @@ CREATE TABLE `pedido_producto` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci
 
 ALTER TABLE pedido_producto
-    ADD CONSTRAINT fk_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id)
-    
+    ADD CONSTRAINT fk_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id);
 
 -- --------------------------------------------------------
 

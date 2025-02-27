@@ -49,7 +49,7 @@ main {
 .productos-info{
     display: flex;
 }
-.contador{
+#div-contador{
     align-items: right;
     display: flex;
     margin-left: 40px;
@@ -92,8 +92,7 @@ main {
     background-color: grey;
 }
 
-.vinobianchi{
-    background-image: url("/lenoir/screens/img/vinito.webp");
+.prod{
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -102,78 +101,4 @@ main {
 .detalles{
     width: 150px;
 
-}
-.vinochaca{
-    background-image: url("/lenoir/screens/img/vinito.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 250px;
-    
-    
-}
-.toro{
-    background-image: url("/lenoir/screens/img/vinito.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 250px;
-    
-    
-}
-.heineken{
-    background-image: url("/lenoir/screens/img/heineken.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 250px;
-}
-.corona{
-    background-image: url("/lenoir/screens/img/corona.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 250px;
-}
-.quilmes{
-    background-image: url("/lenoir/screens/img/quilmes.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 250px;
-}
-.patagonia{
-    background-image: url("/lenoir/screens/img/patagonia.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 250px;
-}
-.campari{
-    background-image: url("/lenoir/screens/img/patagonia.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 250px;
-}
-.fernet{
-    background-image: url("/lenoir/screens/img/patagonia.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 250px;
-}
-.blue-label{
-    background-image: url("/lenoir/screens/img/patagonia.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 250px;
-}
-.smirnoff{
-    background-image: url("/lenoir/screens/img/patagonia.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 70%;
-    height: 250px;
 }

@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial</title>
-    <link rel="stylesheet" href="/lenoir/screens/admin/stylesadmin/panel.css">
-</head>
-<body>
-    <header class="header">
-            <div class="lenoirhead"></div>
-            <p class="admin">PANEL ADMIN</p>
-    </header>
+{% extends "admin/layoutAdmin.html" %}
+{% block content %}
+    
     <div class="box">
         <div class="filter-box">
             <div>
@@ -110,8 +100,7 @@
         </div>
     </div>
     <div class="volver">
-        <a href="/lenoir/screens/admin/panel.html"><button id="volver">VOLVER</button></a>
+        <a href="/admin/panel"><button id="volver">VOLVER</button></a>
     </div>
         
-</body>
-</html>
+{% endblock %}

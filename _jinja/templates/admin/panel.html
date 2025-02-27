@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Admin</title>
-    <link rel="stylesheet" href="/lenoir/screens/admin/stylesadmin/panel.css">
-</head>
-<body>
-    <header>
-        <div class="header">
-            <div class="lenoirhead"></div>
-            <div class="admin">
-                <p>PANEL ADMIN</p>
-            </div>
-        </div>
-    </header>
+{% extends "/admin/layoutAdmin.html" %}
+{% block content %}
     <div class="panel">
-        <a href="/lenoir/screens/admin/addProd.html"><button>AGREGAR PRODUCTOS</button></a>
-        <a href="/lenoir/screens/admin/editProd.html"><button>EDITAR PRODUCTOS</button></a>
-        <a href="/lenoir/screens/admin/addComb.html"><button>AGREGAR COMBO</button></a>
-        <a href="/lenoir/screens/admin/historical.html"><button>HISTORIAL</button></a>
-        <a href="/lenoir/screens/admin/stateOrder.html"><button>ESTADO ORDENES</button></a>
-        <a href="/lenoir/screens/admin/addAdmin.html"><button>EDIT ADMIN</button></a>
+        <a href="/admin/addprod"><button>AGREGAR PRODUCTOS</button></a>
+        <a href="/admin/editprod"><button>EDITAR PRODUCTOS</button></a>
+        <a href="/admin/historical"><button>HISTORIAL</button></a>
+        <a href="/admin/stateOrder"><button>ESTADO ORDENES</button></a>
+        <a href="/admin/addAdmin"><button>AGREGAR ADMIN</button></a>
     </div>
-
-</body>
-</html>
+{% endblock %}

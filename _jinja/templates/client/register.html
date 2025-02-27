@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+{% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="clientstyles/login.css">
+    <link rel="stylesheet" href="/static/css/client/login.css">
     <link rel="icon" type="image/x-icon" href="/lenoir/screens/img/logo.png">
-</head>
+{% endblock %}
 <body>
-    <a href="/lenoir/screens/client/index.html"><div class="logo"></div></a>
+    {% if param and param.get('error_msg_register')!=None %}
+    <p class="error_msg_alert">{{param.get('error_msg_register')}}</p>
+    {%endif%}
+    {% if param and param.get('succes_msg_register')!=None %}
+    <p class="succes_msg_alert">{{param.get('succes_msg_register')}}</p>
+    {%endif%}
+    <a href="/"><div class="logo"></div></a>
     <form method="post" id="register">
         <input type="text" id="nombre" placeholder="Nombre y apellido">
         <input type="text" id="user" placeholder="Usuario">
@@ -23,10 +29,12 @@
             </div>
         </div>
         <p class="warnings" id="warnings"></p>
-        <a href="/lenoir/screens/client/login.html">YA TENGO UNA CUENTA</a>
+        <a href="/login">YA TENGO UNA CUENTA</a>
     </form>
+    {% block script %}
     <script src="/lenoir/screens/client/scripts/header.js"></script>
     <script src="/lenoir/screens/client/scripts/carrito.js"></script>
     <script src="/lenoir/screens/client/scripts/contador2.js"></script>
+    {% endblock %}
 </body>
 </html>

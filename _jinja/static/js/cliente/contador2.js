@@ -10,13 +10,13 @@ const cantidadDisplay = cartItem.querySelector("#cantidad");
     incrementButton.addEventListener("click", () => {
     cantidad++;
     cantidadDisplay.textContent = cantidad;
-});
-
+    }
+);
 
     decrementButton.addEventListener("click", () => {
     if (cantidad > 0) {
         cantidad--;
         cantidadDisplay.textContent = cantidad;
     }
-});
+    });
 });

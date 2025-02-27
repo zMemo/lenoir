@@ -51,7 +51,7 @@ def obtenerUsuarioXEmail(param,email,clave='usuario'):
     param[clave]['email']=fila[0][3]
     param[clave]['password']=fila[0][4]
 
-def obtenerUsuarioXEmailPass(result,email,password):
+def obtenerUsuarioXUserPass(result,user,password):
     ''' Información:
         Obtiene todos los campos de la tabla usuario a partir de la clave 'email'
         y del 'password'.
@@ -64,19 +64,21 @@ def obtenerUsuarioXEmailPass(result,email,password):
             False caso contrario.
     '''
     res=False
-    sSql="""SELECT id, nombre,apellido,email,pass 
-    FROM  usuario WHERE  email=%s and pass=%s;"""
-    val=(email,password)
+    sSql="""SELECT id, usuario, nombre,apellido,mail,pass,telefono,nacimiento, tipo_usuario
+    FROM usuario WHERE usuario=%s and pass=%s;"""
+    val=(user,password)
     fila=selectDB(BASE,sSql,val)
     if fila!=[]:
         res=True
         result['id']=fila[0][0]
-        result['nombre']=fila[0][1]
-        result['apellido']=fila[0][2]
-        result['username']=fila[0][3] # es el mail
-        result['password']=fila[0][4]
-        result['imagen']=''
-        result['rol']=''
+        result['usuario']=fila[0][1]
+        result['nombre']=fila[0][2]
+        result['apellido']=fila[0][3]
+        result['mail']=fila[0][4] 
+        result['password']=fila[0][5]
+        result['telefono']=fila[0][6]
+        result['nacimiento']=fila[0][7]
+        result['rol']=fila[0][8]
     return res    
         
 

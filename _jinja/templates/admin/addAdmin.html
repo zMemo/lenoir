@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lenoir</title>
-    <link rel="stylesheet" href="/lenoir/screens/admin/stylesadmin/panel.css">
-</head>
-<body>
-    <header>
-        <div class="header">
-            <div class="lenoirhead"></div>
-            <p class="admin">PANEL ADMIN</p>
-        </div>
-    </header>   
+{% extends "admin/layoutAdmin.html" %}
+{% block content %}
+    
     <div class="container-admin">
         <h1>AGREGAR ADMIN</h1>
         <form>
@@ -27,5 +15,4 @@
             <li>user1@gmail.com</li>
         </ul>
             editar admins -->
-</body>
-</html>
+{% endblock %}

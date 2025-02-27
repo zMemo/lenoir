@@ -20,8 +20,8 @@ DESCRIBE usuario;
 insert into usuario
 (id, usuario, nombre, apellido, mail, pass, telefono, nacimiento, tipo_usuario)
 VALUES
-(NULL, "fentatres34", "juan", "fentanes", "fentagod@gmail.com", "fenta1234", "1134562325", "1999-09-09", "Cliente"),
-(NULL, "fentatres3", "juan", "fentanes", "fentanes@gmail.com", "fenta1234", "1134562325", "1999-09-09", "Cliente");
+(NULL, "Prueba", "juan", "fentanes", "fentagod1@gmail.com", "prueba1234@", "1134562325", "1999-09-09", "Cliente"),
+(NULL, "fentatres344", "juan", "fentanes", "fentanes2@gmail.com", "fenta1234", "1134562325", "1999-09-09", "Cliente");
 
 update usuario SET nombre= "Ignaciown" where id=2;
 
@@ -56,8 +56,8 @@ DESCRIBE oferta;
 insert into oferta
 (id, nombre, fechahora, estado)
 VALUES
-(NULL,'fenta1234', '1999-09-09', 'activo'),
-(NULL,'fenta1234', '1999-09-09', 'inactivo');
+(NULL,'nonStop', '2025-02-26', 'activo'),
+(NULL,'prueba', '2024-02-27', 'inactivo');
 
 update oferta SET nombre= 'Ignaciown' where id=2;
 
@@ -73,8 +73,11 @@ DESCRIBE oferta_detalle;
 insert into oferta_detalle
 (id, id_oferta, id_producto, cantidad, precio_total)
 VALUES
-(NULL,"1", "4", "1500", "1222"),
-(NULL,"2", "5", "2500","3332");
+(NULL,"6", "21", "3", "5000"),
+(NULL,"6", "22", "3","1500"),
+(NULL,"5", "23", "1", "2000"),
+(NULL,"5", "24", "1","2000"),
+(NULL,"5", "25", "2", "2000");
 
 update oferta_detalle SET precio_total= "20000" where id=2;
 
@@ -88,8 +91,8 @@ DESCRIBE pedido_oferta;
 insert into pedido_oferta
 (id, id_usuario, id_oferta, fechahora_pedido, precio_total)
 VALUES
-(NULL,"1", "1", "1999-09-09", "1000"),
-(NULL,"2", "2", "1999-09-09", "2000");
+(NULL,"12", "5", "2025-10-12", "6500"),
+(NULL,"11", "6", "2000-09-09", "6000");
 
 update pedido_oferta SET precio_total= "20000" where id=2;
 
@@ -103,10 +106,10 @@ DESCRIBE pedido_producto;
 INSERT INTO pedido_producto 
 (id, id_usuario, fechahora_pedido, preciototal)
 VALUES
-(NULL, "4", "04/10/24 20:10", "50000"),
-(NULL, "3", "29/09/24 18:44", "38000"),
-(NULL, "2", "18/09/24 14:08", "80000"),
-(NULL, "1", "13/09/24 23:39", "56500");
+(NULL, "12", "04/10/24 20:10", "50000"),
+(NULL, "11", "29/09/24 18:44", "38000"),
+(NULL, "11", "18/09/24 14:08", "80000"),
+(NULL, "12", "13/09/24 23:39", "56500");
 
 --CONSULTAS TABLA "PEDIDO-DETALLE"
 SELECT * from pedido_detalle;
@@ -116,8 +119,10 @@ DESCRIBE pedido_detalle;
 insert into pedido_detalle
 (id, id_pedido, id_producto, cantidad, precio)
 VALUES
-(NULL,"1", "3", "1000", "12222"),
-(NULL,"2", "4", "2000","21111");
+(NULL,"5", "21", "2", "5000"),
+(NULL,"6", "22", "3","3000"),
+(NULL,"7", "23", "5", "2000"),
+(NULL,"8", "24", "1","1000");
 
 update pedido_detalle SET precio= "20000" where id=2;
 
@@ -132,10 +137,11 @@ SELECT * from entrega;
 DESCRIBE entrega;
 
 insert into entrega
-(id, id_pedido_producto, id_oferta, fechahora_entrega, estado)
+(id, id_pedido_producto, id_pedido_oferta, fechahora_entrega, estado)
 VALUES
-(NULL,"1", "3", "1999-09-09", "cancelado"),
-(NULL,"2", "4", "1999-09-09","en proceso");
+(NULL,"5", "3", "1999-09-09", "cancelado"),
+(NULL,"6", "4", "1999-09-09","en proceso"),
+(NULL,"7", "3", "1999-09-09", "cancelado");
 update entrega SET estado= "entregado" where id=2;
 delete from entrega where id=1;
 

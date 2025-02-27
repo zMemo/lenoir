@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lenoir</title>
-    <link rel="stylesheet" href="/lenoir/screens/admin/stylesadmin/panel.css">
-</head>
-<body>
-    <header>
-        <div class="header">
-            <div class="lenoirhead"></div>
-            <p class="admin">PANEL ADMIN</p>
-        </div>
-    </header>
+{% extends "admin/layoutAdmin.html" %}
+
+{% block content %}
     <div class="box">
         <div class="boxaddprod">
             <form method="post" id="addprod">
@@ -35,9 +23,12 @@
         </div>
     </div>
     <div class="volver">
-        <a href="/lenoir/screens/admin/panel.html"><button id="volver">VOLVER</button></a>
+        <a href="/admin/panel"><button id="volver">VOLVER</button></a>
     </div>
+{% endblock %}
+{%block script%}
     <script src="/lenoir/screens/admin/scripts/addprod.js"></script>
+{%endblock%}
 
 
 

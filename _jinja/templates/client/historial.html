@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/lenoir/screens/client/clientstyles/productos.css">
-    <link rel="stylesheet" href="/lenoir/screens/client/clientstyles/style.css">
-    <title>Catálogo de Extras</title>
-</head>
+{% extends "client/layout.html" %}
+{% block head %}
+    <title>Historial</title>
+    <link rel="stylesheet" href="clientstyles/historical.css">
+{% endblock %}
 <body>
     <header class="head">
         <div class="upper-header">
@@ -24,26 +20,26 @@
                         <li><a href="/lenoir/screens/client/extra.html">extras</a></li>
                     </ul>
                 </li>
-                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/ofertas.html">OFERTAS</a></li>
-                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/myorder.html">MI PEDIDO</a></li>
-                <li class="hideOnMobile"><a class="underlined" href="/lenoir/screens/client/contact.html">CONTACTO</a></li>
+                <li class="hideOnMobile"><a class="underlined" href="ofertas.html">OFERTAS</a></li>
+                <li class="hideOnMobile"><a class="underlined" href="myorder.html">MI PEDIDO</a></li>
+                <li class="hideOnMobile"><a class="underlined" href="contact.html">CONTACTO</a></li>
                 <li onclick=showSidebar()><a class="menu" id="menu"></a></li>
             </ul>
-            <a href="/lenoir/screens/client/index.html" class="lenoirhead"></a>
+            <a href="/lenoir/screens/index.html" class="lenoirhead"></a>
             <ul class="categories-sidebar">
                 <li class="sideunder" onclick=hideSidebar()><a class="crossmenu"></a></li>
-                <li><a class="sideunder" href="/lenoir/screens/client/bebidas.html">BEBIDAS</a></li>
-                <li><a class="sideunder" href="/lenoir/screens/client/ofertas.html">OFERTAS</a></li>
-                <li><a class="sideunder" href="/lenoir/screens/client/login.html">MI PEDIDO</a></li>
-                <li><a class="sideunder" href="//lenoir/screens/client/contact.html">CONTACTO</a></li>
+                <li><a class="sideunder" href="/lenoir/screens/bebidas.html">BEBIDAS</a></li>
+                <li><a class="sideunder" href="ofertas.html">OFERTAS</a></li>
+                <li><a class="sideunder" href="myorder.html">MI PEDIDO</a></li>
+                <li><a class="sideunder" href="contact.html">CONTACTO</a></li>
             </ul>
             <div class="account">
                 <div>
                     <ul class="categories">
-                        <li><a id="cuenta" href="#"></a>
+                        <li><a id="cuentalog" href="#"></a>
                             <ul class="submenu">
-                                <li><a href="/lenoir/screens/client/login.html">Login</a></li>
-                                <li><a href="/lenoir/screens/client/register.html">Register</a></li>
+                                <li><a href="/lenoir/screens/client/myaccount.html">mi cuenta</a></li>
+                                <li><a href="/lenoir/screens/client/historical.html">historial</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -93,62 +89,48 @@
                 </div>
             </div>
     </header>
-    <main>
-        <div class="catalog">
-            <div class="product">
-                <div class="corona"></div>
-                <p>Corona</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
-            </div>
-            <div class="product">
-                <div class="patagonia"></div>
-                <a href="/lenoir/screens/img/patagonia.png"></a>
-                <p>Patagonia 24.7</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
-            </div>
-            <div class="product">
-                <div class="quilmes"></div>
-                <a href="/lenoir/screens/img/quilmes.jpg"></a>
-                <p>Quilmes</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
-            </div>
-            <div class="product">
-                <div class="heineken"></div>
-                <a href="/lenoir/screens/img/heineken.png"></a>
-                <p>Patagonia Amber Lager</p>
-                <button>Agregar al carrito</button>
-                <a href="/lenoir/screens/producto.html"><button>Ver detalles</button></a>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="row primary">
-            <div class="column about">
-                <h3>Medios de pago</h3>
-                <div class="mediodepago"></div>
-            </div>
-            <div class="column links">
-                <h3>Redes sociales</h3>
-                <ul>
-                    <li><a href="">Instagram</a></li>
-                    <li><a href="">Tiktok</a></li>
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="">Twitter</a></li>
-                </ul>
-            </div>
-            <div class="column logo">
-                <div class="logofooter"></div>
-            </div>
-        </div>
-        <div class="row copyright">
-            <p>Copyright &copy; 2021 Lenoir Bebidas</p>
-        </div>
-    </footer>
-    <script src="/lenoir/screens/client/scripts/header.js"></script>
-    <script src="/lenoir/screens/client/scripts/carrito.js"></script>
-    <script src="/lenoir/screens/client/scripts/contador2.js"></script>
+    <section class="history-container">
+        <table id="history-table">
+            <thead>
+                <tr>
+                    <th>codOrden</th>
+                    <th>Productos</th>
+                    <th>fecha comprada</th>
+                    <th>fecha entregada</th>
+                    <th>total</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>cerveza amstel x3</td>
+                    <td>06/04/2024</td>
+                    <td>07/04/2024</td>
+                    <td>$30000</td> 
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>hielo</td>
+                    <td>06/04/2024</td>
+                    <td>07/04/2024</td>
+                    <td>$30000</td> 
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>oferta tafen</td>
+                    <td>06/04/2024</td>
+                    <td>07/04/2024</td>
+                    <td>$30000</td> 
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>vino x3</td>
+                    <td>06/04/2024</td>
+                    <td>07/04/2024</td>
+                    <td>$30000</td> 
+                </tr>
+            </thead>  
+        </table>
+    </section>
 </body>
-</html>
+    <script src="/lenoir/screens/client/scripts/carrito.js"></script>
+    <script src="/lenoir/screens/client/scripts/header.js"></script>
+    <script src="/lenoir/screens/client/scripts/contador2.js"></script>

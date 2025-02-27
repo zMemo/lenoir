@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar ses</title>
-    <link rel="stylesheet" href="clientstyles/login.css">
-    <link rel="icon" type="image/x-icon" href="/lenoir/screens/img/logo.png">
-
-</head>
-<body>
-    <a href="/lenoir/screens/client/index.html"><div class="logo"></div></a>
-    <form method="get" id="login" action"recibir_datos" >
+  {% block head %}
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Iniciar sesion</title>
+      <link rel="stylesheet" href="/static/css/client/login.css">
+      <link rel="icon" type="image/x-icon" href="/static/img/logo.png">
+  {% endblock %}
+  <body>
+    {% if param and param.get('error_msg_login')!=None %}
+    <p class="error_msg_alert">{{param.get('error_msg_login')}}</p>
+    {%endif%}
+    {% if param and param.get('succes_msg_login')!=None %}
+    <p class="succes_msg_alert">{{param.get('succes_msg_login')}}</p>
+    {%endif%}
+    <a href="/"><div class="logo"></div></a>
+    <form method="POST" id="login" action="/signin" >
         <input type="text" id="username" name="username" placeholder="Usuario">
         <input type="password" id="password" name="password" placeholder="Contraseña"> 
         <input type="submit" id="open" class="btn"value="Iniciar sesion">
@@ -21,10 +26,10 @@
             </div>
           </div>
         <p class="warnings" id="warnings"></p>
-        <a href="/lenoir/screens/client/register.html">CREAR CUENTA NUEVA</a>
+        <a href="/register">CREAR CUENTA NUEVA</a>
     </form>
-  
-
-    <script src="/lenoir/screens/client/scripts/login.js"></script>
-</body>
+    {% block script %}
+      <script src="/lenoir/screens/client/scripts/login.js"></script>
+    {% endblock %}
+  </body>
 </html>
