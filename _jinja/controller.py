@@ -587,7 +587,8 @@ def addadmin(param):
     return render_template('admin/addAdmin.html',param=param)
 
 ###def agregaprod(connDB,sQuery):
-res=none
+res=None
+base=con
     
     
 
